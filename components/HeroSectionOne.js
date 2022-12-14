@@ -11,7 +11,7 @@ export default function HeroSectionOne() {
                     <div className="p-4 sm:p-2 m-auto md:p-0">
                         <p className="text-[#FD9E07] text-[24px] font-500">Get the Best of Both worlds</p>
                         <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">Hire Dedicated <br />Developers</p>
-                        <p className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 md:w-2/3 mt-2">Our skilled Developers possess expertise with some of the most robust, scalable,Secure backend frameworks to develop the best Angular app remotely and reliably</p>
+                        <p className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 md:w-2/3 mt-2">Our skilled Developers possess expertise with some of the most robust, scalable,Secure backend and frontend frameworks to develop the best applications using Angular, Reactjs, Nodejs, Nextjs, and Nestjs remotely and reliably.</p>
                     </div>
                     <div className="p-4 ml-auto md:p-0">
                         <Image src={MyImg} width={500} height={500} alt="mainlogo1" loading="lazy" />

@@ -8,7 +8,7 @@ const Faq = () => {
                         <p>To hire developers from us, Clients have just to follow a few steps:</p>
                         <p>a. Approach us with the requirements of the project and developers in brief.</p>
                         <p>b. Choose the developers that are appropriate depending on your expectations.</p>
-                        <p>Discuss the project in detail and take updates from them about the work progress.</p>
+                        <p>c. Discuss the project in detail and take updates from them about the work progress.</p>
                     </div>,
             isShow: false
         },
