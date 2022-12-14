@@ -3,18 +3,34 @@ import { useState } from "react";
 const Faq = () => {
     const [faqData, setFaqData] = useState([
         {
-            title: "In publishing and graphic design, Lorem ipsum is a placeholder",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            title: "How to hire Dedicated Developers from Grids & Guides?",
+            desc: <div>
+                        <p>To hire developers from us, Clients have just to follow a few steps:</p>
+                        <p>a. Approach us with the requirements of the project and developers in brief.</p>
+                        <p>b. Choose the developers that are appropriate depending on your expectations.</p>
+                        <p>Discuss the project in detail and take updates from them about the work progress.</p>
+                    </div>,
             isShow: false
         },
         {
-            title: "In publishing and graphic design, Lorem ipsum is a placeholder",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            
+            title: "How much does it cost to hire a Developer?",
+            desc: "The cost can be estimated based on the project requirement and we have varied pricing based on per hour and per month and the client can choose as per their convenience.",
             isShow: false
         },
         {
-            title: "In publishing and graphic design, Lorem ipsum is a placeholder",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            title: "What are the benefits of hiring a Dedicated Developer?",
+            desc: "The developer will work only on one single client project and the client has the option to hire a developer as per their project needs instead of hiring a full-time employee.",
+            isShow: false
+        },
+        {
+            title: "What should I be ready with before contacting Grids & Guides?",
+            desc: "It is better to have a clear idea and objective of your project (technical expertise will be an added advantage). Our business and technology consultants are there to help you anytime.",
+            isShow: false
+        },
+        {
+            title: "Who owns the code?",
+            desc: "The code ownership will be provided to the client.",
             isShow: false
         }
     ])

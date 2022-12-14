@@ -196,6 +196,7 @@ const FreeQuote = () => {
                     <div className="flex flex-col">
                         <Select
                             name="technology"
+                            isSearchable={false}
                             placeholder="Choose a Technology"
                             options={TECHNOLOGY_OPT}
                             isMulti
@@ -228,6 +229,7 @@ const FreeQuote = () => {
                         <Select
                             placeholder="Select Experience"
                             name="experience"
+                            isSearchable={false}
                             value={EXPERIENCE_OPT.filter(val => val.value === formik.values.experience)}
                             options={EXPERIENCE_OPT}
                             styles={{
@@ -254,6 +256,7 @@ const FreeQuote = () => {
                         <Select
                             placeholder="Select a Pricing Model"
                             name="pricingModel"
+                            isSearchable={false}
                             options={PRICING_MODEL}
                             value={PRICING_MODEL.filter(val => val.value === formik.values.pricingModel)}
                             styles={{
@@ -284,6 +287,7 @@ const FreeQuote = () => {
                             <Select
                                 placeholder="Select Budget"
                                 name="budgets"
+                                isSearchable={false}
                                 value={budgetsSelectOpt(formik.values.pricingModel).filter(val => val.value === formik.values.budgets)}
                                 options={budgetsSelectOpt(formik.values.pricingModel)}
                                 styles={{
@@ -312,6 +316,7 @@ const FreeQuote = () => {
                             <Select
                                 placeholder="Select Joining Requirement"
                                 name="joining"
+                                isSearchable={false}
                                 value={JOINING_OPT.filter(val => val.value === formik.values.joining)}
                                 options={JOINING_OPT}
                                 styles={{
