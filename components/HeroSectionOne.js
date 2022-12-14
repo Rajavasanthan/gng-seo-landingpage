@@ -31,7 +31,7 @@ export default function HeroSectionOne() {
                     Pricing Models
                     </p>
             </div>
-                <div className="grid grid-cols-1 sm:gap-10 mx-auto space-y-3 md:space-y-0 md:grid-cols-2 md:px-16">
+                <div className="grid grid-cols-1 sm:gap-10 mx-auto space-y-3 md:space-y-0 md:grid-cols-2 md:px-24">
                     <PricingCard image={"/assets/sand-clock.svg"} text={"Hourly pricing model"} />
                     <PricingCard image={"/assets/calendar.svg"} text={"Fixed monthly pricing model"} />
                 </div>

@@ -13,10 +13,10 @@ export default function HeroSectionTwo() {
                         <img src="/assets/squres.png" alt="squares" className="w-10 sm:w-6 h-10 sm:h-6 mr-2" />
                         Why choose us?
                     </p>
-                    <p className="text-[#696969] font-400 text-[16px] text-justify md:px-0 md:text-left">Grids & Guides offers access to high profiled skills and solutions with brilliant developers who can execute the tools and techniques in the technology that produces the best in class solutions for any size of assignment. We develop client-side solutions to generate robust and interactive user experience in exchange of immense traffic to the web applications irrespective of the business vertical or dimension.
+                    <p className="text-[#696969] font-400 text-[16px] text-justify md:px-0 md:text-left">Grids & Guides offers access to high profiled skills and solutions with brilliant developers who can execute the tools and techniques in the technology that produces the best in class solutions for any size of assignment. We develop client-side solutions to generate robust and interactive user experience in exchange of immense traffic to the web applications irrespective of the business vertical or dimension.<br/>
                     Hire the best and most suitable developers for any industry to build persuasive frontend development and up-gradation that are irreproachable for liable markets and users<br/>
-                    Hire a team to develop your app from scratch or hire individual talents to join existing team at multiple levels, G&G is your go to solution provider for all levels of expertise in development<br/>
-                    Our Professional engineers possess strong exposure in every segment of development in the domain like</p>
+                    Hire a team to develop your app from scratch or hire individual talents to join existing team at multiple levels, G&G is your go to solution provider for all levels of expertise in development
+                    </p>
                 </div>
             </div>
         </div>

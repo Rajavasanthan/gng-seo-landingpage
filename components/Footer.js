@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <>
+        <div>
         <div className="bg-[#F0F0F0]">
         <div className="grid grid-cols-1 gap-10 py-10 mx-auto md:grid-cols-3 max-w-7xl">
             <img src="/assets/gandg.svg" alt="Grids and Guides" className="m-auto w-36 md:w-2/4" />
@@ -22,7 +22,7 @@ const Footer = () => {
     <div className="bg-[#262626] px-6 py-4">
         <p className="text-white text-[16px] md:text-[16px] text-center">Grids and Guides • All Right Reserved © "Grids and Guides" Group of Companies.  </p>
     </div>
-        </>
+        </div>
     )
 }
 

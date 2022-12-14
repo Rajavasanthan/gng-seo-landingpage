@@ -8,7 +8,7 @@ export default function HeroSectionFour() {
                         Hire expert level developers From diverse sectors
                     </p>
                 </div>
-                <div className="m-auto my-auto space-y-6 md:p-0 mt-6 sm:mt-0">
+                <div className="m-auto my-auto space-y-6 md:p-0 mt-6">
                     <p className="text-[#696969] font-400 text-[16px] w-full md:w-3/4 md:ml-auto">
                         We possess brilliant skill set of programmers for scalable and secure web applications and associated services
                     </p>

@@ -180,12 +180,15 @@ const FreeQuote = () => {
     }
 
     return (
-        <div className="bg-[#F7F8FD] p-10" id="contactpage">
+        <div className="bg-[#F7F8FD] p-10 relative" id="contactpage">
+            <div className="absolute top-0 right-0">
+            <img src="/assets/large-tile.svg" alt="squares" className="hidden md:block md:h-[200px]" />
+            </div>
             <Toaster />
             <div className="mx-auto max-w-7xl">
                 <div className="flex justify-center p-2 md:p-0 h-[100px]">
                     <p className="text-[#3D4C61] text-[35px] font-900 font-redHat flex justify-start items-center">
-                        <img src="/assets/square2.png" alt="squares" className="mb-2 mr-2 h-7" />
+                        <img src="/assets/large-tile.svg" alt="squares" className="mb-2 mr-2 h-7" />
                         Get free quotation
                     </p>
                 </div>
