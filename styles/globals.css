@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+ font-family: Red Hat Display;
+ font-display: swap;
+}
+
+.box1::after {
+ content: " ";
+ position: absolute;
+ width: 150px;
+ height: 8px;
+ background: #ffffff;
+ right: -33%;
+ top: 0;
+}
+
+.box2::after {
+ content: " ";
+ position: absolute;
+ width: 150px;
+ height: 8px;
+ background: #ffffff;
+ left: -31%;
+ bottom: 0;
+}
+
+.box3::after {
+ content: " ";
+ position: absolute;
+ width: 150px;
+ height: 8px;
+ background: #ffffff;
+ right: -32%;
+ top: 0;
+}
+
+.box4::after {
+ content: " ";
+ position: absolute;
+ width: 150px;
+ height: 8px;
+ background: #ffffff;
+ left: -31%;
+ bottom: 0;
+}
+
+.middle-bar {
+ width: 8px;
+ height: 100%;
+ background: #ffffff;
+ position: absolute;
+ left: 50%;
+}
+
+@media (max-width: 1280px) {
+ .box1::after,
+ .box2::after,
+ .box3::after,
+ .box4::after,
+ .middle-bar {
+  display: none;
+ }
+}
