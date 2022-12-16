@@ -9,7 +9,7 @@ export default function HeroSectionFour() {
                     </p>
                 </div>
                 <div className="m-auto my-auto mt-6 space-y-6 md:p-0">
-                    <p className="text-[#696969] font-400 text-[17px] font-redHat w-full md:w-3/4 md:ml-auto">
+                    <p className="text-[#696969] font-400 text-[17px] font-redHat w-full md:w-3/4 md:ml-auto px-6 md:px-0">
                         We possess brilliant skill set of programmers for scalable and secure web applications and associated services.
                     </p>
                 </div>
