@@ -1,7 +1,5 @@
 import HeroSectionOneCard from "./HeroSectionOneCard";
 import PricingCard from "./PricingCard";
-import MyImg from '../public/assets/image1.svg'
-import Image from "next/image";
 import { Link } from "react-scroll";
 
 export default function HeroSectionOne() {
@@ -24,7 +22,7 @@ export default function HeroSectionOne() {
                         </Link>
                     </div>
                     <div className="p-4 ml-auto md:p-0">
-                        <Image src={MyImg} width={500} height={500} alt="mainlogo1" loading="lazy" />
+                        <img src="/assets/image1.svg" width={500} height={500} alt="mainlogo1" loading="lazy" />
                     </div>
                 </div>
             </div>

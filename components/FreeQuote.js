@@ -182,7 +182,7 @@ const FreeQuote = () => {
     return (
         <div className="bg-[#F7F8FD] p-10 relative" id="contactpage">
             <div className="absolute top-0 right-0">
-            <img src="/assets/large-tile.svg" alt="squares" className="hidden md:block md:h-[200px]" />
+                <img src="/assets/large-tile.svg" alt="squares" className="hidden md:block md:h-[200px]" />
             </div>
             <Toaster />
             <div className="mx-auto max-w-7xl">

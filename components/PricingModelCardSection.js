@@ -1,18 +1,17 @@
 import HeroSectionOneCard from "./HeroSectionOneCard";
-import Image from "next/image";
 
 export default function PricingModelCardSection() {
     return (
         <div id="homepage">
             <div className="bg-[#F7F8FD] md:h-[650px]">
                 <div className="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
-                    <div className="p-4 sm:p-2 m-auto md:p-0">
+                    <div className="p-4 m-auto sm:p-2 md:p-0">
                         <p className="text-[#FD9E07] text-[24px] font-500">Best website for business</p>
                         <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">Hire AngularJS <br />Developers</p>
                         <p className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 md:w-2/3 mt-2">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface</p>
                     </div>
                     <div className="p-4 ml-auto md:p-0">
-                        <Image src={MyImg} width={500} height={500} alt="mainlogo1" loading="lazy" />
+                        <img src={MyImg} width={500} height={500} alt="mainlogo1" loading="lazy" />
                     </div>
                 </div>
             </div>

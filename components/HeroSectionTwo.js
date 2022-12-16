@@ -1,12 +1,9 @@
-import Image from 'next/image';
-import MyImg from '../public/assets/image2.svg';
-
 export default function HeroSectionTwo() {
     return (
         <div className="my-auto h--[600px] sm:mt-10" id="aboutpage">
             <div className="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
                 <div className="p-4 mr-auto sm:p-2 md:p-0">
-                    <Image src={MyImg} width={500} height={500} alt="mainlogo2" loading="lazy" />
+                    <img src="/assets/image2.svg" width={500} height={500} alt="mainlogo2" loading="lazy" />
                 </div>
                 <div className="p-4 m-auto space-y-6 sm:p-2 md:p-0">
                     <p className="text-[#3D4C61] text-[24px] sm:text-[35px] font-900 flex justify-start items-center">
