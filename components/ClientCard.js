@@ -84,7 +84,7 @@ export default function ClientCard() {
                     Our prime motive is to inculcate the desires of the clients and yield a satisfactory response from them.
                 </p>
             </div>
-            <div className="relative my-10">
+            <div className="relative w-full mx-0 my-10 md:w-10/12 md:mx-auto">
                 <SamplePrevArrow className="absolute left-[-30px] sm:left-[-20px] top-16 cursor-pointer" onClick={onClickPrev} />
                 <Slider ref={sliderRef} {...settings} autoplay arrows={false}>
                     <SliderComponent image={"/assets/logos/blacksheep.png"} name={"blacksheep"} />

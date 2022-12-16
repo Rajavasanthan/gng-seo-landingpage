@@ -86,7 +86,7 @@ export default function Navbar() {
                                 duration={1200}
                                 className="bg-[#3D4C61] text-[15px] text-white font-redHat px-3 py-2 rounded cursor-pointer"
                             >
-                                CONACT US
+                                CONTACT US
                             </Link>
                             <span className="animate-pulse absolute w-3 h-3 bg-[#FD9E07] rounded-full top-[-13px] right-[-4px]"></span>
                         </li>
@@ -149,7 +149,7 @@ export default function Navbar() {
                                 offset={-70}
                                 duration={2000}
                                 className="bg-[#3D4C61] text-[15px] text-white font-redHat px-3 py-2 rounded cursor-pointer"
-                            >CONACT US</Link>
+                            >CONTACT US</Link>
                         </li>
                     </ul>
                 </div>

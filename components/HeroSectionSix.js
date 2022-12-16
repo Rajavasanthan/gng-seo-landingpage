@@ -11,9 +11,9 @@ export default function HeroSectionSix() {
             </div>
             <div className="w-full ml-auto md:w-4/12 md:mr-auto">
                 <img src="/assets/square2.png" alt="squares" className="h-10 mb-6 mr-2" />
-                <p className="text-[#3D4C61] font-900 text-[24px] sm:text-[35px] font-redHat">Benefits of <br /> Hiring From G and G</p>
+                <p className="text-[#3D4C61] font-900 text-[24px] sm:text-[35px] font-redHat">Benefits of <br /> Hiring From G&G</p>
                 <p className="text-[#3D4C61] font-400 text-[16px] font-redHat my-4">
-                    We are approached for hiring developers and programmers for diverse technology needs by overcoming any business challenges, ensuring quality, timeline and affordability
+                    We are approached for hiring developers and programmers for diverse technology needs by overcoming any business challenges, ensuring quality, timeline and affordability.
                 </p>
             </div>
         </div>
