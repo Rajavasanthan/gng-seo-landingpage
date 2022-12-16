@@ -2,7 +2,7 @@
 
 export default function ProcessCard({ count, text, desc, extraClass }) {
     return (
-        <div className={`bg-white rounded shadow-md h-[250px] md:w-[400px] relative mx-auto ${extraClass}`}>
+        <div className={`bg-white rounded shadow-md h-full md:w-[400px] relative mx-auto ${extraClass}`}>
             <div className="flex justify-between mx-6 sm:mx-10">
                 <div className="bg-[#FD9E07] w-[60px] text-center pt-7">
                     <p className="text-white font-redHat font-700 text-[30px]">{count}</p>
