@@ -55,9 +55,9 @@ const Faq = () => {
                         <p className="text-[#747474] font-400 text-[19px] pr-3">{faq.title}</p>
                         <img src="/assets/down-arrow.png" alt="arrow-down" className={`h-5 cursor-pointer ${faq.isShow ? "rotate-180" : "rotate-0"}`} />
                     </div>
-                    <p className={`text-[#696969] font-400 text-[16px] mt-10 ${faq.isShow ? "block" : "hidden"}`}>
+                    <div className={`text-[#696969] font-400 text-[16divx] mt-10 ${faq.isShow ? "block" : "hidden"}`}>
                         {faq.desc}
-                    </p>
+                    </div>
                 </div>
             ))}
         </div>
