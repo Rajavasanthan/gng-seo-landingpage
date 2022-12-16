@@ -9,7 +9,7 @@ export default function HeroSectionThree() {
                     <TechStackCard image={"/assets/angular.svg"} text={"Angular"} />
                     <TechStackCard image={"/assets/react.svg"} text={"React"} />
                 </div>
-                <div className="flex flex-wrap items-center justify-between space-x-1 md:space-x-4 md:justify-between">
+                <div className="flex flex-wrap items-center justify-center space-x-1 md:space-x-4 md:justify-between">
                     <TechStackCard image={"/assets/node.svg"} text={"Nodejs"} />
                     <TechStackCard image={"/assets/next.svg"} text={""} />
                     <TechStackCard image={"/assets/nest.svg"} text={"Next js"} />

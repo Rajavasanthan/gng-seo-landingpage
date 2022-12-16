@@ -36,7 +36,7 @@ export default function HeroSectionFive() {
                     </div>
                     <div className="relative grid grid-cols-1 gap-5 mt-10 mb-10 md:gap-10 md:grid-cols-2">
                         <ProcessCard extraClass={"box1"} text={"List your Expectations"} desc={"Share your project requirements to receive the best services from the best programmers in the shortest duration and also budget friendly."} count={"01"} />
-                        <ProcessCard extraClass={"box2 h-full"} text={"Identify the best developers"} desc={"From those we shortlisted from the pool of talents based on expertise, experience and talent and finalise candidates."} count={"02"} />
+                        <ProcessCard extraClass={"box2"} text={"Identify the best developers"} desc={"From those we shortlisted from the pool of talents based on expertise, experience and talent and finalise candidates."} count={"02"} />
                         <ProcessCard extraClass={"box3"} text={"Contract Discussion"} desc={"Discuss your requirements, targets, budget and duration with the developers and finalise them in the contract."} count={"03"} />
                         <ProcessCard extraClass={"box4"} text={"Match a Model"} desc={"Choose a model from the available engagement models, match your terms with the model and get the most fitting developers."} count={"04"} />
                         <div className="middle-bar"></div>
