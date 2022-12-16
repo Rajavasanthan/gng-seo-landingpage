@@ -2,7 +2,7 @@ import TechStackCard from "./TechStackCard";
 
 export default function HeroSectionThree() {
     return (
-        <div className="relative p-4 sm:p-2 md:p-0 md:h-[350px] bg-[#F7F8FD] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
+        <div className="relative p-4 sm:p-2 md:p-0 md:h-[300px] bg-[#F7F8FD] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
             <img src="/assets/square2.png" alt="squares" className="hidden h-16 md:block md:absolute top-3 right-1" />
             <div className="order-last m-auto">
                 <div className="flex items-center justify-center space-x-4 md:justify-start">
@@ -15,9 +15,9 @@ export default function HeroSectionThree() {
                     <TechStackCard image={"/assets/nest.svg"} text={"Next js"} />
                 </div>
             </div>
-            <div className="md:mx-0 flex sm:justify-center items-center">
-                <p className="font-700 text-[24px] sm:text-[35px] md:w-11/12 md:mx-auto mb-6 sm:mb-0 text-[#3D4C61]">Our Professional engineers possess strong exposure in every segment of development in the domain like</p>
+            <div className="flex items-center w-full ml-auto md:mx-0 sm:justify-center">
+                <p className="font-700 text-[25px] md:w-7/12 w-full md:mx-auto mb-6 text-[#3D4C61]">Our Professional engineers possess strong exposure in every segment of development in the domain like</p>
             </div>
         </div>
     );
-}
+} 
