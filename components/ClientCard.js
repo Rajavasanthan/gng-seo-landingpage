@@ -72,7 +72,7 @@ export default function ClientCard() {
 
     return (
         <div className="bg-[#3D4C61] text-white px-[45px] md:px[100px] py-[30px] sm:py-[80px] overflow-x-hidden relative">
-            <div className="flex flex-col justify-around md:flex-row">
+            <div className="flex flex-col justify-around md:flex-row md:w-11/12 md:mx-auto">
                 <div className="flex justify-center sm:h-[100px] mb-8">
                     <p className="text-white text-[24px] sm:text-[35px] font-900 font-redHat flex justify-start items-center">
                         <img src="/assets/orange-white-logo.png" alt="squares" className="h-8 mr-4" />
