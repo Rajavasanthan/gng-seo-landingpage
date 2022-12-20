@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Faq from '../components/Faq'
 import Footer from '../components/Footer'
 import FreeQuote from '../components/FreeQuote'
@@ -10,6 +10,7 @@ import HeroSectionThree from '../components/HeroSectionThree'
 import HeroSectionTwo from '../components/HeroSectionTwo'
 import Navbar from '../components/Navbar'
 import ScrollToTop from '../components/ScrollToTop'
+import WhatsAppWidget from '../components/WhatsAppWidget'
 
 export default function Home() {
     const [showScrollToTopBtn, setshowScrollToTopBtn] = useState(false)
@@ -27,7 +28,13 @@ export default function Home() {
     return (
         <div className='relative'>
             {showScrollToTopBtn &&
-                <ScrollToTop className={"fixed bottom-3 right-3"} />
+                <Fragment>
+                    <WhatsAppWidget className={"fixed bottom-[82px] right-3"} />
+                    <ScrollToTop className={"fixed bottom-3 right-3"} />
+                </Fragment>
+            }
+            {!showScrollToTopBtn &&
+                <WhatsAppWidget className={"fixed bottom-3 right-3"} />
             }
             <Navbar />
             <HeroSectionOne />
