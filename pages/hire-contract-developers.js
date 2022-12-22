@@ -28,13 +28,7 @@ export default function Home() {
     return (
         <div className='relative'>
             {showScrollToTopBtn &&
-                <Fragment>
-                    <WhatsAppWidget className={"fixed bottom-[82px] right-3"} />
-                    <ScrollToTop className={"fixed bottom-3 right-3"} />
-                </Fragment>
-            }
-            {!showScrollToTopBtn &&
-                <WhatsAppWidget className={"fixed bottom-3 right-3"} />
+                <ScrollToTop className={"fixed bottom-3 right-3"} />
             }
             <Navbar />
             <HeroSectionOne />
@@ -49,3 +43,14 @@ export default function Home() {
         </div>
     )
 }
+
+
+// {showScrollToTopBtn &&
+//     <Fragment>
+//         <WhatsAppWidget className={"fixed bottom-[82px] right-3"} />
+//         <ScrollToTop className={"fixed bottom-3 right-3"} />
+//     </Fragment>
+// }
+// {!showScrollToTopBtn &&
+//     <WhatsAppWidget className={"fixed bottom-3 right-3"} />
+// }
