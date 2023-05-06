@@ -5,6 +5,7 @@ import Select from 'react-select';
 import IntlTelInput from 'react-intl-tel-input';
 import 'react-intl-tel-input/dist/main.css';
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const TECHNOLOGY_OPT = [
     {
@@ -117,7 +118,9 @@ const EXPERIENCE_OPT = [
 ]
 
 const FreeQuote = () => {
-    const [tech, setTech] = useState([])
+    const router = useRouter();
+    const { campaignId } = router.query;
+    const [tech, setTech] = useState([]);
 
     const formik = useFormik({
         initialValues: {
@@ -159,9 +162,11 @@ const FreeQuote = () => {
     }
 
     const sendEmail = async (values) => {
+        const payload = { ...values };
+        payload.campaignId = campaignId ? campaignId : '';
         await fetch("https://8uhrngrbkl.execute-api.ap-south-1.amazonaws.com/gng-send-email", {
             method: "POST",
-            body: JSON.stringify(values)
+            body: JSON.stringify(payload)
         })
             .then(res => {
                 formik.resetForm()
