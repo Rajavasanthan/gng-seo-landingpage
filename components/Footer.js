@@ -37,6 +37,16 @@ const Footer = () => {
       <p className="font-400 text-[16px] sm:text-[18px] font-redHat ml-14 md:ml-16">
        <a href="tel:+919884891090">+91-9884891090</a>
       </p>
+      <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
+       Visit Us:{" "}
+       <a
+        className="underline text-blue-500"
+        href="https://www.gridsandguides.com/"
+        target="_blank"
+       >
+        gridsandguides.com
+       </a>
+      </p>
      </div>
     </div>
    </div>

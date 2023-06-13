@@ -4,7 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Select from "react-select";
 import IntlTelInput from "react-intl-tel-input";
 import "react-intl-tel-input/dist/main.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 const TECHNOLOGY_OPT = [
@@ -61,6 +61,124 @@ const BUDGETS_FIXED = [
  {
   value: "INR 3L and Above",
   label: "INR 3L and Above",
+ },
+];
+
+// For US price model
+const PRICING_MODEL_US = [
+ {
+  value: "1 Month",
+  label: "1 Month",
+ },
+ {
+  value: "3 Months",
+  label: "3 Months",
+ },
+ {
+  value: "6 Months",
+  label: "6 Months",
+ },
+ {
+  value: "1 Year",
+  label: "1 Year",
+ },
+];
+
+const BUDGET_US = [
+ {
+  value: "$15 / Hour",
+  label: "$15 / Hour",
+ },
+ {
+  value: "$20 / Hour",
+  label: "$20 / Hour",
+ },
+ {
+  value: "$25 / Hour",
+  label: "$25 / Hour",
+ },
+ {
+  value: "$30 / Hour",
+  label: "$30 / Hour",
+ },
+ {
+  value: "$35 / Hour",
+  label: "$35 / Hour",
+ },
+ {
+  value: "$40 / Hour",
+  label: "$40 / Hour",
+ },
+ {
+  value: "$45 / Hour",
+  label: "$45 / Hour",
+ },
+ {
+  value: "$50 / Hour",
+  label: "$50 / Hour",
+ },
+ {
+  value: "upto $100 / Hour",
+  label: "upto $100 / Hour",
+ },
+];
+
+// FOR UK PRICE MODEL
+const PRICING_MODEL_UK = [
+ {
+  value: "1 Month",
+  label: "1 Month",
+ },
+ {
+  value: "3 Months",
+  label: "3 Months",
+ },
+ {
+  value: "6 Months",
+  label: "6 Months",
+ },
+ {
+  value: "1 Year",
+  label: "1 Year",
+ },
+];
+
+const BUDGET_UK = [
+ {
+  value: "£15 / Hour",
+  label: "£15 / Hour",
+ },
+ {
+  value: "£20 / Hour",
+  label: "£20 / Hour",
+ },
+ {
+  value: "£25 / Hour",
+  label: "£25 / Hour",
+ },
+ {
+  value: "£30 / Hour",
+  label: "£30 / Hour",
+ },
+ {
+  value: "£35 / Hour",
+  label: "£35 / Hour",
+ },
+ {
+  value: "£40 / Hour",
+  label: "£40 / Hour",
+ },
+ {
+  value: "£45 / Hour",
+  label: "£45 / Hour",
+ },
+ {
+  value: "£50 / Hour",
+  label: "£50 / Hour",
+ },
+ {
+  value: "upto £100 / Hour",
+  label: "upto £100 / Hour",
  },
 ];
 
@@ -121,6 +239,23 @@ const FreeQuote = () => {
  const router = useRouter();
  const { campaignId } = router.query;
  const [tech, setTech] = useState([]);
+ const [countryPathName, setCountryPathName] = useState("");
+ let preferredCountries;
+ if (router.pathname.includes("uk")) {
+  preferredCountries = ["gb"];
+ } else if (router.pathname.includes("us")) {
+  preferredCountries = ["us"];
+ } else {
+  preferredCountries = ["in"];
+ }
+
+ useEffect(() => {
+  setCountryPathName(router.pathname);
+ }, [countryPathName]);
+
+ useEffect(() => {
+  console.log(preferredCountries);
+ }, [preferredCountries]);
 
  const formik = useFormik({
   initialValues: {
@@ -138,9 +273,13 @@ const FreeQuote = () => {
   validationSchema: Yup.object({
    technology: Yup.string().required("Technology is Required"),
    experience: Yup.string().required("Experience is Required"),
-   budgets: Yup.string().required("Budgest is Required"),
+   budgets: Yup.string().required("Budget is Required"),
    joining: Yup.string(),
-   pricingModel: Yup.string().required("Pricing Model is Required"),
+   pricingModel: Yup.string().required(
+    countryPathName.includes("uk") || countryPathName.includes("us")
+     ? "Tenure/Duration is required"
+     : "Pricing Model is Required"
+   ),
    name: Yup.string().required("Name is Required"),
    email: Yup.string()
     .email("Please enter a valid email address")
@@ -281,39 +420,130 @@ const FreeQuote = () => {
        </span>
       )}
      </div>
-     <div className="flex flex-col">
-      <Select
-       placeholder="Select a Pricing Model"
-       name="pricingModel"
-       isSearchable={false}
-       options={PRICING_MODEL}
-       value={PRICING_MODEL.filter(
-        (val) => val.value === formik.values.pricingModel
+     {countryPathName.includes("uk") || countryPathName.includes("us") ? (
+      <div className="flex flex-col">
+       <Select
+        placeholder="Select Tenure/Duration"
+        name="pricingModel"
+        isSearchable={false}
+        options={PRICING_MODEL_UK}
+        value={PRICING_MODEL_UK.filter(
+         (val) => val.value === formik.values.pricingModel
+        )}
+        styles={{
+         control: (baseStyles, state) => ({
+          ...baseStyles,
+          border: 0,
+          outline: "none",
+          padding: "10px",
+          boxShadow: "none",
+         }),
+        }}
+        onBlur={() => formik.setFieldTouched("pricingModel", true)}
+        onChange={async (val) => {
+         await formik.setFieldValue("pricingModel", val.value);
+         await formik.setFieldValue("budgets", "");
+        }}
+       />
+       {formik.touched.pricingModel && (
+        <span className="mt-1 ml-1 text-xs tracking-wide text-red-500 font-redHat">
+         {formik.errors.pricingModel}
+        </span>
        )}
-       styles={{
-        control: (baseStyles, state) => ({
-         ...baseStyles,
-         border: 0,
-         outline: "none",
-         padding: "10px",
-         boxShadow: "none",
-        }),
-       }}
-       onBlur={() => formik.setFieldTouched("pricingModel", true)}
-       onChange={async (val) => {
-        await formik.setFieldValue("pricingModel", val.value);
-        await formik.setFieldValue("budgets", "");
-       }}
-      />
-      {formik.touched.pricingModel && (
-       <span className="mt-1 ml-1 text-xs tracking-wide text-red-500 font-redHat">
-        {formik.errors.pricingModel}
-       </span>
-      )}
-     </div>
+      </div>
+     ) : (
+      <div className="flex flex-col">
+       <Select
+        placeholder="Select a Pricing Model"
+        name="pricingModel"
+        isSearchable={false}
+        options={PRICING_MODEL}
+        value={PRICING_MODEL.filter(
+         (val) => val.value === formik.values.pricingModel
+        )}
+        styles={{
+         control: (baseStyles, state) => ({
+          ...baseStyles,
+          border: 0,
+          outline: "none",
+          padding: "10px",
+          boxShadow: "none",
+         }),
+        }}
+        onBlur={() => formik.setFieldTouched("pricingModel", true)}
+        onChange={async (val) => {
+         await formik.setFieldValue("pricingModel", val.value);
+         await formik.setFieldValue("budgets", "");
+        }}
+       />
+       {formik.touched.pricingModel && (
+        <span className="mt-1 ml-1 text-xs tracking-wide text-red-500 font-redHat">
+         {formik.errors.pricingModel}
+        </span>
+       )}
+      </div>
+     )}
     </div>
     <div className="grid grid-cols-1 my-10 gap-y-4 md:gap-y-0 md:grid-cols-3 gap-x-5">
-     <div className="flex flex-col">
+     {countryPathName.includes("uk") && (
+      <div className="flex flex-col">
+       <Select
+        placeholder="Select Budget"
+        name="budgets"
+        isSearchable={false}
+        value={BUDGET_UK.filter((val) => val.value === formik.values.budgets)}
+        options={BUDGET_UK}
+        styles={{
+         control: (baseStyles, state) => ({
+          ...baseStyles,
+          border: 0,
+          outline: "none",
+          padding: "10px",
+          boxShadow: "none",
+         }),
+        }}
+        onBlur={() => formik.setFieldTouched("budgets", true)}
+        onChange={async (val) => {
+         await formik.setFieldValue("budgets", val.value);
+        }}
+       />
+       {formik.touched.budgets && (
+        <span className="mt-1 ml-1 text-xs tracking-wide text-red-500 font-redHat">
+         {formik.errors.budgets}
+        </span>
+       )}
+      </div>
+     )}
+     {countryPathName.includes("us") && (
+      <div className="flex flex-col">
+       <Select
+        placeholder="Select Budget"
+        name="budgets"
+        isSearchable={false}
+        value={BUDGET_US.filter((val) => val.value === formik.values.budgets)}
+        options={BUDGET_US}
+        styles={{
+         control: (baseStyles, state) => ({
+          ...baseStyles,
+          border: 0,
+          outline: "none",
+          padding: "10px",
+          boxShadow: "none",
+         }),
+        }}
+        onBlur={() => formik.setFieldTouched("budgets", true)}
+        onChange={async (val) => {
+         await formik.setFieldValue("budgets", val.value);
+        }}
+       />
+       {formik.touched.budgets && (
+        <span className="mt-1 ml-1 text-xs tracking-wide text-red-500 font-redHat">
+         {formik.errors.budgets}
+        </span>
+       )}
+      </div>
+     )}
+     {!countryPathName.includes("uk") && !countryPathName.includes("us") && (
       <div className="flex flex-col">
        <Select
         placeholder="Select Budget"
@@ -343,7 +573,7 @@ const FreeQuote = () => {
         </span>
        )}
       </div>
-     </div>
+     )}
      <div className="flex flex-col">
       <div className="flex flex-col">
        <Select
@@ -425,11 +655,14 @@ const FreeQuote = () => {
      </div>
      <div>
       <IntlTelInput
-       preferredCountries={["in"]}
+       preferredCountries={
+        preferredCountries !== undefined && preferredCountries
+       }
        containerClassName="intl-tel-input"
        inputClassName="form-control w-full p-4 outline-none border"
        style={{
         width: "100%",
+        zIndex: 0,
        }}
        onPhoneNumberBlur={(isValid) => {
         if (!isValid) {
