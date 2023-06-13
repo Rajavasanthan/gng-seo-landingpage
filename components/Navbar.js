@@ -16,7 +16,7 @@ export default function Navbar() {
     >
      <img
       id="homepagelogo"
-      src="./assets/logo.svg"
+      src="/assets/logo.svg"
       className="mr-3 cursor-pointer h-9 sm:h-10"
       alt="Grids and Guides"
      />
