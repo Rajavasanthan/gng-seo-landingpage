@@ -14,34 +14,34 @@ import WhatsAppWidget from "../components/WhatsAppWidget";
 import FloatedPhone from "../components/FloatedPhone";
 
 export default function Home() {
- const [showScrollToTopBtn, setshowScrollToTopBtn] = useState(false);
+    const [showScrollToTopBtn, setshowScrollToTopBtn] = useState(false);
 
- useEffect(() => {
-  window.addEventListener("scroll", () => {
-   if (window.scrollY > 200) {
-    setshowScrollToTopBtn(true);
-   } else {
-    setshowScrollToTopBtn(false);
-   }
-  });
- }, []);
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                setshowScrollToTopBtn(true);
+            } else {
+                setshowScrollToTopBtn(false);
+            }
+        });
+    }, []);
 
- return (
-  <div className="relative">
-   {showScrollToTopBtn && <ScrollToTop className={"fixed bottom-3 right-3"} />}
-   <FloatedPhone className={"fixed bottom-3 left-3"} />
-   <Navbar />
-   <HeroSectionOne />
-   <HeroSectionTwo />
-   <HeroSectionThree />
-   <HeroSectionFour />
-   <HeroSectionFive />
-   <HeroSectionSeven />
-   <FreeQuote />
-   <Faq />
-   <Footer />
-  </div>
- );
+    return (
+        <div className="relative">
+            {showScrollToTopBtn && <ScrollToTop className={"fixed bottom-3 right-3"} />}
+            <FloatedPhone className={"fixed bottom-3 left-3"} />
+            <Navbar />
+            <HeroSectionOne />
+            <HeroSectionTwo />
+            <HeroSectionThree />
+            <HeroSectionFour />
+            <HeroSectionFive />
+            <HeroSectionSeven />
+            <FreeQuote />
+            <Faq />
+            <Footer />
+        </div>
+    );
 }
 
 // {showScrollToTopBtn &&

@@ -3,7 +3,7 @@ module.exports = {
         return [
             {
                 source: '/',
-                destination: '/hire-contract-developers',
+                destination: '/offshore-software-development-company',
                 permanent: true,
             },
         ];
