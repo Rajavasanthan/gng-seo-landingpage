@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o hire-contract-developers",
+    "build": "next build && next export -o offshore-software-development-company",
     "start": "next start"
   },
   "dependencies": {
