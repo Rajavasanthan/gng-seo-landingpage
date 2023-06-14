@@ -678,7 +678,6 @@ const FreeQuote = () => {
                 onBlur={() => formik.setFieldTouched("pricingModel", true)}
                 onChange={async (val) => {
                   await formik.setFieldValue("pricingModel", val.value);
-                  await formik.setFieldValue("budgets", "");
                 }}
               />
               {formik.touched.pricingModel && (
