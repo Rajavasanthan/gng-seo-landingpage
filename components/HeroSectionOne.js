@@ -1,8 +1,13 @@
+import { useRouter } from "next/router";
 import HeroSectionOneCard from "./HeroSectionOneCard";
 import PricingCard from "./PricingCard";
 import { Link } from "react-scroll";
+import React from "react";
 
 export default function HeroSectionOne() {
+
+    const router = useRouter();
+
     return (
         <div id="homepage">
             <div className="bg-[#F7F8FD] md:h-[580px] mt-[60px] md:mt-[80px]">
@@ -11,13 +16,32 @@ export default function HeroSectionOne() {
                         <p className="text-[#FD9E07] text-[24px] font-500">
                             Get the Best of Both worlds
                         </p>
-                        <p className="text-[#3D4C61] text-[28px] sm:text-[40px] font-900">
-                            Unlock Your Business Potential <br />
-                            with Offshore Software Development
-                        </p>
-                        <p className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0  mt-2">
-                            Partner with our offshore development team to leverage the advantages of outsourcing and maximize your company's growth. Our dedicated remote developers are experts in building robust, scalable, and secure applications using cutting-edge technologies such as Angular, ReactJS, Node.js, Next.js,Nest.js and latest Mobile Technologies.
-                        </p>
+                        {router.pathname.includes("offshore-software-development-company") &&
+                            <React.Fragment>
+                                <p className="text-[#3D4C61] text-[28px] sm:text-[40px] font-900">
+                                    Unlock Your Business Potential <br />
+                                    with Offshore Software Development
+                                </p>
+                                <p className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0  mt-2">
+                                    Partner with our offshore development team to leverage the advantages of outsourcing and maximize your company's growth. Our dedicated remote developers are experts in building robust, scalable, and secure applications using cutting-edge technologies such as Angular, ReactJS, Node.js, Next.js,Nest.js and latest Mobile Technologies.
+                                </p>
+                            </React.Fragment>
+                        }
+
+                        {router.pathname.includes("hire-contract-developers") &&
+                            <React.Fragment>
+                                <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">
+                                    Hire Dedicated <br />
+                                    Remote Developers
+                                </p>
+                                <p className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0  mt-2">
+                                    Our skilled Developers possess expertise with some of the most robust,
+                                    scalable,Secure backend and frontend frameworks to develop the best
+                                    applications using Angular, Reactjs, Nodejs, Nextjs, and Nestjs remotely
+                                    and reliably.
+                                </p>
+                            </React.Fragment>
+                        }
                         <Link
                             to="contactpage"
                             spy={true}
