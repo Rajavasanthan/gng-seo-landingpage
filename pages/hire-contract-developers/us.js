@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Faq from "../../components/Faq";
 import Footer from "../../components/Footer";
 import FreeQuote from "../../components/FreeQuote";
@@ -6,12 +6,10 @@ import HeroSectionFive from "../../components/HeroSectionFive";
 import HeroSectionFour from "../../components/HeroSectionFour";
 import HeroSectionOne from "../../components/HeroSectionOne";
 import HeroSectionSeven from "../../components/HeroSectionSeven";
-import HeroSectionThree from "../../components/HeroSectionThree";
 import HeroSectionTwo from "../../components/HeroSectionTwo";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";
-import WhatsAppWidget from "../../components/WhatsAppWidget";
-import FloatedPhone from "../../components/FloatedPhone";
+import Technologies from "../../components/Technologies";
 
 export default function Home() {
     const [showScrollToTopBtn, setshowScrollToTopBtn] = useState(false);
@@ -32,7 +30,7 @@ export default function Home() {
             <Navbar />
             <HeroSectionOne />
             <HeroSectionTwo />
-            <HeroSectionThree />
+            <Technologies />
             <HeroSectionFour />
             <HeroSectionFive />
             <HeroSectionSeven />

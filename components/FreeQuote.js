@@ -28,6 +28,42 @@ const TECHNOLOGY_OPT = [
     value: "Next Js",
     label: "Next Js",
   },
+  {
+    value: "Python",
+    label: "Python",
+  },
+  {
+    value: "Java",
+    label: "Java",
+  },
+  {
+    value: "Spring Boot",
+    label: "Spring Boot",
+  },
+  {
+    value: "Full Stack Java Developer",
+    label: "Full Stack Java Developer",
+  },
+  {
+    value: "Full Stack Python Developer",
+    label: "Full Stack Python Developer",
+  },
+  {
+    value: "Native Android/iOS",
+    label: "Native Android/iOS",
+  },
+  {
+    value: "Flutter",
+    label: "Flutter",
+  },
+  {
+    value: "React Native",
+    label: "React Native",
+  },
+  {
+    value: "Ionic",
+    label: "Ionic",
+  }
 ];
 
 const PRICING_MODEL = [

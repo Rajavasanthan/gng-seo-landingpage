@@ -11,6 +11,7 @@ import HeroSectionTwo from "../components/HeroSectionTwo";
 import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
 import FloatedPhone from "../components/FloatedPhone";
+import Technologies from "../components/Technologies";
 
 export default function Home() {
     const [showScrollToTopBtn, setshowScrollToTopBtn] = useState(false);
@@ -32,7 +33,7 @@ export default function Home() {
             <Navbar />
             <HeroSectionOne />
             <HeroSectionTwo />
-            <HeroSectionThree />
+            <Technologies />
             <HeroSectionFour />
             <HeroSectionFive />
             <HeroSectionSeven />
