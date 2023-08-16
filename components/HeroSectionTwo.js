@@ -1,3 +1,5 @@
+import { Link } from "react-scroll";
+
 export default function HeroSectionTwo() {
     return (
         <div className="my-auto h--[600px] sm:mt-10" id="aboutpage">
@@ -14,6 +16,16 @@ export default function HeroSectionTwo() {
                         Hire the best and most suitable developers for any industry to build persuasive frontend development and up-gradation that are irreproachable for liable markets and users<br />
                         Hire a team to develop your app from scratch or hire individual talents to join existing team at multiple levels, G&G is your go to solution provider for all levels of expertise in development.
                     </p>
+                    <Link
+                        to="contactpage"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={1200}
+                        className="relative bg-[#FD9E07] text-[15px] font-600 text-white font-redHat w-[138px] h-[42px] cursor-pointer flex justify-center items-center my-6 rounded-md md:mt-10"
+                    >
+                        CONTACT US
+                    </Link>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ import HeroSectionThree from "../components/HeroSectionThree";
 import HeroSectionTwo from "../components/HeroSectionTwo";
 import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
-import WhatsAppWidget from "../components/WhatsAppWidget";
+import Technologies from "../components/Technologies";
 import FloatedPhone from "../components/FloatedPhone";
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
             <Navbar />
             <HeroSectionOne />
             <HeroSectionTwo />
-            <HeroSectionThree />
+            <Technologies />
             <HeroSectionFour />
             <HeroSectionFive />
             <HeroSectionSeven />

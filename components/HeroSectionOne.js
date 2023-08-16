@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import HeroSectionOneCard from "./HeroSectionOneCard";
+import ContactForm from './ContactForm'
 import PricingCard from "./PricingCard";
-import { Link } from "react-scroll";
 import React from "react";
 
 export default function HeroSectionOne() {
@@ -10,7 +10,7 @@ export default function HeroSectionOne() {
 
     return (
         <div id="homepage">
-            <div className="bg-[#F7F8FD] md:h-[580px] mt-[60px] md:mt-[80px]">
+            <div className="bg-[#F7F8FD] h-[1000px] md:h-[680px] mt-[60px] md:mt-[80px]">
                 <div className="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
                     <div className="p-4 m-auto sm:p-2 md:p-0">
                         <p className="text-[#FD9E07] text-[24px] font-500">
@@ -22,9 +22,11 @@ export default function HeroSectionOne() {
                                     Unlock Your Business Potential <br />
                                     with Offshore Software Development
                                 </p>
-                                <p className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0  mt-2">
-                                    Partner with our offshore development team to leverage the advantages of outsourcing and maximize your company's growth. Our dedicated remote developers are experts in building robust, scalable, and secure applications using cutting-edge technologies such as Angular, ReactJS, Node.js, Next.js,Nest.js and latest Mobile Technologies.
-                                </p>
+                                <ul className="p-4 list-disc">
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>100% In-House Team:</strong> Say goodbye to freelancers. Work with a cohesive team committed to your project's success.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Hassle-Free Onboarding:</strong> Skip the hiring headaches and jumpstart your project swiftly.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Flexible Engagement:</strong> Hire our developers on an hourly or monthly basis as per your project needs.</li>
+                                </ul>
                             </React.Fragment>
                         }
 
@@ -34,33 +36,16 @@ export default function HeroSectionOne() {
                                     Hire Dedicated <br />
                                     Remote Developers
                                 </p>
-                                <p className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0  mt-2">
-                                    Our skilled Developers possess expertise with some of the most robust,
-                                    scalable,Secure backend and frontend frameworks to develop the best
-                                    applications using Angular, Reactjs, Nodejs, Nextjs, and Nestjs remotely
-                                    and reliably.
-                                </p>
+                                <ul className="p-4 list-disc">
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>100% In-House Team:</strong> Say goodbye to freelancers. Work with a cohesive team committed to your project's success.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Hassle-Free Onboarding:</strong> Skip the hiring headaches and jumpstart your project swiftly.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Flexible Engagement:</strong> Hire our developers on an hourly or monthly basis as per your project needs.</li>
+                                </ul>
                             </React.Fragment>
                         }
-                        <Link
-                            to="contactpage"
-                            spy={true}
-                            smooth={true}
-                            offset={-70}
-                            duration={1200}
-                            className=" relative bg-[#FD9E07] text-[15px] font-600 text-white font-redHat w-[138px] h-[42px] cursor-pointer flex justify-center items-center my-6 rounded-md md:mt-10"
-                        >
-                            CONTACT US
-                        </Link>
                     </div>
-                    <div className="p-4 ml-auto md:p-0">
-                        <img
-                            src="/assets/image1.svg"
-                            width={500}
-                            height={500}
-                            alt="mainlogo1"
-                            loading="lazy"
-                        />
+                    <div className="w-full ml-auto md:my-10 md:w-2/3 ">
+                        <ContactForm />
                     </div>
                 </div>
             </div>
