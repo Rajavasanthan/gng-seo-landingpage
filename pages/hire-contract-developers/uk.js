@@ -10,6 +10,7 @@ import HeroSectionTwo from "../../components/HeroSectionTwo";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";
 import Technologies from "../../components/Technologies";
+import PricingModel from "../../components/PricingModel";
 
 export default function Home() {
     const [showScrollToTopBtn, setshowScrollToTopBtn] = useState(false);
@@ -29,18 +30,18 @@ export default function Home() {
             {showScrollToTopBtn && <ScrollToTop className={"fixed bottom-3 right-3"} />}
             <Navbar />
             <HeroSectionOne />
-            <HeroSectionTwo />
             <Technologies />
+            <PricingModel />
             <HeroSectionFour />
             <HeroSectionFive />
             <HeroSectionSeven />
-            <FreeQuote />
             <Faq />
             <Footer />
         </div>
     );
 }
 
+//   <FreeQuote />
 // {showScrollToTopBtn &&
 //     <Fragment>
 //         <WhatsAppWidget className={"fixed bottom-[82px] right-3"} />
