@@ -41,9 +41,7 @@ export default function HeroSectionFive() {
                         <ProcessCard extraClass={"box4"} text={"Match a Model"} desc={"Choose a model from the available engagement models, match your terms with the model and get the most fitting developers."} count={"04"} />
                         <div className="middle-bar"></div>
                     </div>
-                    <div className="mt-10" id="clientpage">
-                        <ClientCard />
-                    </div>
+
                     <div className="pb-10 mt-10 md:mt-20">
                         <HeroSectionSix />
                     </div>
@@ -52,3 +50,7 @@ export default function HeroSectionFive() {
         </div>
     )
 }
+
+// <div className="mt-10" id="clientpage">
+// <ClientCard />
+// </div>

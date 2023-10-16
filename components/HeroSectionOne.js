@@ -3,6 +3,7 @@ import HeroSectionOneCard from "./HeroSectionOneCard";
 import ContactForm from './ContactForm'
 import PricingCard from "./PricingCard";
 import React from "react";
+import ClientCard from "./ClientCard";
 
 export default function HeroSectionOne() {
 
@@ -10,7 +11,7 @@ export default function HeroSectionOne() {
 
     return (
         <div id="homepage">
-            <div className="bg-[#F7F8FD] h-[1000px] md:h-[680px] mt-[60px] md:mt-[80px]">
+            <div className="bg-[#F7F8FD] h-[1000px] md:h-[780px] mt-[60px] md:mt-[80px]">
                 <div className="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
                     <div className="p-4 m-auto sm:p-2 md:p-0">
                         <p className="text-[#FD9E07] text-[24px] font-500">
@@ -44,7 +45,7 @@ export default function HeroSectionOne() {
                             </React.Fragment>
                         }
                     </div>
-                    <div className="w-full ml-auto md:my-10 md:w-2/3 ">
+                    <div className="w-full ml-auto md:my-10 md:w-[70%]" id="contactform">
                         <ContactForm />
                     </div>
                 </div>
@@ -71,26 +72,31 @@ export default function HeroSectionOne() {
                     text={"Cups of Coffee"}
                 />
             </div>
-            <div className="bg-[#FD9E07] max-w-7xl mx-auto mt-24 pt-10 pb-20">
-                <div className="flex justify-center sm:h-[100px] mb-8">
-                    <p className="text-white text-[24px] sm:text-[35px] font-900 font-redHat flex justify-start items-center">
-                        <img src="/assets/square-orange.png" alt="squares" className="h-6 mr-2" />
-                        Pricing Models
-                    </p>
-                </div>
-                <div className="grid grid-cols-1 mx-auto space-y-3 sm:gap-10 md:space-y-0 md:grid-cols-2 md:px-24">
-                    <PricingCard
-                        image={"/assets/sand-clock.svg"}
-                        text={"Hourly pricing model"}
-                    />
-                    <PricingCard
-                        image={"/assets/calendar.svg"}
-                        text={"Fixed monthly pricing model"}
-                    />
-                </div>
+            <div className="pt-10 pb-20 mx-auto mt-16 max-w-7xl">
+                <ClientCard />
             </div>
         </div>
     );
 }
 
 // <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FD9E07] opacity-30"></span>
+
+
+// <div className="bg-[#FD9E07] max-w-7xl mx-auto mt-24 pt-10 pb-20">
+//                 <div className="flex justify-center sm:h-[100px] mb-8">
+//                     <p className="text-white text-[24px] sm:text-[35px] font-900 font-redHat flex justify-start items-center">
+//                         <img src="/assets/square-orange.png" alt="squares" className="h-6 mr-2" />
+//                         Pricing Models
+//                     </p>
+//                 </div>
+//                 <div className="grid grid-cols-1 mx-auto space-y-3 sm:gap-10 md:space-y-0 md:grid-cols-2 md:px-24">
+//                     <PricingCard
+//                         image={"/assets/sand-clock.svg"}
+//                         text={"Hourly pricing model"}
+//                     />
+//                     <PricingCard
+//                         image={"/assets/calendar.svg"}
+//                         text={"Fixed monthly pricing model"}
+//                     />
+//                 </div>
+//             </div>

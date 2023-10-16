@@ -2,7 +2,67 @@ import { useFormik } from "formik";
 import { useRouter } from "next/router";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
+import Select from "react-select";
+import { useState } from "react";
 
+const TECHNOLOGY_OPT = [
+    {
+        value: "Node Js",
+        label: "Node Js",
+    },
+    {
+        value: "Nest Js",
+        label: "Nest Js",
+    },
+    {
+        value: "Angular",
+        label: "Angular",
+    },
+    {
+        value: "React Js",
+        label: "React Js",
+    },
+    {
+        value: "Next Js",
+        label: "Next Js",
+    },
+    {
+        value: "Python",
+        label: "Python",
+    },
+    {
+        value: "Java",
+        label: "Java",
+    },
+    {
+        value: "Spring Boot",
+        label: "Spring Boot",
+    },
+    {
+        value: "Full Stack Java Developer",
+        label: "Full Stack Java Developer",
+    },
+    {
+        value: "Full Stack Python Developer",
+        label: "Full Stack Python Developer",
+    },
+    {
+        value: "Native Android/iOS",
+        label: "Native Android/iOS",
+    },
+    {
+        value: "Flutter",
+        label: "Flutter",
+    },
+    {
+        value: "React Native",
+        label: "React Native",
+    },
+    {
+        value: "Ionic",
+        label: "Ionic",
+    }
+];
 
 function CustomInput({ placeholder, imgSrc, type, id, onChange, onBlur, value }) {
     return (
@@ -32,6 +92,7 @@ function CustomInput({ placeholder, imgSrc, type, id, onChange, onBlur, value })
 
 export default function ContactForm() {
     const router = useRouter();
+    const [tech, setTech] = useState([]);
     const { campaignId } = router.query;
 
     const formik = useFormik({
@@ -56,16 +117,20 @@ export default function ContactForm() {
                 .matches(/^\+?[0-9][0-9]{7,14}$/, "Enter a valid Phone Number")
                 .required("Phone Number is Required"),
             company: Yup.string().required().min(3, "Enter message atlest 3 character long"),
+            technology: Yup.string().required("Technology is Required"),
+            joining: Yup.string(),
+            pricingModel: Yup.string().required("Pricing Model is Required"),
         }),
         onSubmit: async (values) => {
             await sendEmail(values);
-            console.log(values);
+            // console.log(values);
         },
     });
 
     const sendEmail = async (values) => {
         const payload = { ...values };
         payload.campaignId = campaignId ? campaignId : "";
+        // console.log(payload)
         await fetch(
             "https://8uhrngrbkl.execute-api.ap-south-1.amazonaws.com/gng-send-email",
             {
@@ -90,12 +155,8 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="border rounded-md shadow-md bg-white border-[#FD9E07] mx-2 md:mx-0 mt-4 relative">
+        <div className="border rounded-md shadow-md bg-[#FBF8F4] border-[#FD9E07] mx-2 md:mx-0 mt-4 relative">
             <Toaster />
-            <div className="hidden md:absolute md:top-[-20px] md:right-[-35px] md:rotate-45 md:w-[70px] md:h-[70px] md:bg-[#FD9E07] md:rounded-full md:flex md:items-center md:justify-center">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FD9E07] opacity-75"></span>
-                <p className="text-center text-white font-redHat font-700 md:font-900 md:text-[14px]">SAVE <br /> 10%</p>
-            </div>
             <div className="my-3">
                 <p className="text-[24px] font-500 text-center">Get Free Quote</p>
                 <div className="flex justify-center mt-1 space-x-2">
@@ -103,7 +164,87 @@ export default function ContactForm() {
                     <div className="w-[20px] h-1 bg-[#FD9E07] rounded-md"></div>
                     <div className="w-[10px] h-1 bg-[#FD9E07] rounded-md"></div>
                 </div>
-                <div className="w-full my-3 md:w-2/3 md:mx-auto">
+                <div className="w-full my-3 space-y-3 md:w-2/3 md:mx-auto">
+                    <div className="space-y-2">
+                        <p className="text-[15px] text-[#FD9E07] font-500 ml-3 md:ml-0">Engagement Timeline <span className="text-red-600">*</span></p>
+                        <div className="flex justify-start px-3 md:px-0" onChange={async (e) => {
+                            e.stopPropagation();
+                            await formik.setFieldValue("joining", e.target.value);
+                        }}>
+                            <div className="flex w-full">
+                                <input className="accent-[#FD9E07]" type="radio" id="joining" name="joining" value="1 to 6 Months" />
+                                <label className="text-[14px] font-500 text-center ml-1">1 to 6 Months</label>
+                            </div>
+                            <div className="flex w-full">
+                                <input className="accent-[#FD9E07] border-none" type="radio" id="joining" name="joining" value="More Than 6 Months" />
+                                <label className="text-[14px] font-500 text-center ml-1">More than 6 Months</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    {formik.touched.pricingModel && (
+                        <span className="mt-0 ml-1 text-xs tracking-wide text-red-500 font-redHat">
+                            {formik.errors.pricingModel}
+                        </span>
+                    )}
+
+                    <div className="space-y-2">
+                        <p className="text-[15px] text-[#FD9E07] font-500 ml-3 md:ml-0">Pricing model <span className="text-red-600">*</span></p>
+                        <div className="flex justify-start px-3 md:px-0" onChange={async (e) => {
+                            e.stopPropagation();
+                            await formik.setFieldValue("pricingModel", e.target.value);
+                        }}>
+                            <div className="flex w-full">
+                                <input className="accent-[#FD9E07]" type="radio" id="pricingModel" name="pricingModel" value="Fixed" />
+                                <label className="text-[14px] font-500 text-center ml-1">Fixed</label>
+                            </div>
+                            <div className="flex w-full">
+                                <input className="accent-[#FD9E07] border-none" type="radio" id="pricingModel" name="pricingModel" value="Hourly" />
+                                <label className="text-[14px] font-500 text-center ml-1">Hourly</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    {formik.touched.pricingModel && (
+                        <span className="mt-0 ml-1 text-xs tracking-wide text-red-500 font-redHat">
+                            {formik.errors.pricingModel}
+                        </span>
+                    )}
+
+                    <div className="border-b border-[#FD9E07]">
+                        <Select
+                            name="technology"
+                            isSearchable={false}
+                            placeholder="Choose a Technology"
+                            options={TECHNOLOGY_OPT}
+                            isMulti
+                            value={tech}
+                            styles={{
+                                control: (baseStyles) => ({
+                                    ...baseStyles,
+                                    width: "100%",
+                                    border: 0,
+                                    outline: "none",
+                                    boxShadow: "none",
+                                    backgroundColor: "#FBF8F4"
+                                }),
+                            }}
+                            //onFocus={formik.handleBlur}
+                            onBlur={() => formik.setFieldTouched("technology", true)}
+                            onChange={async (val) => {
+                                setTech(val);
+                                const valArr = [];
+                                val.forEach((opt) => valArr.push(opt.value));
+                                await formik.setFieldValue("technology", valArr.join(","));
+                            }}
+                        />
+                    </div>
+                    {formik.touched.technology && (
+                        <span className="mt-0 ml-1 text-xs tracking-wide text-red-500 font-redHat">
+                            {formik.errors.technology}
+                        </span>
+                    )}
+
                     <CustomInput
                         placeholder="Full Name"
                         imgSrc="/assets/user.svg"
@@ -159,6 +300,7 @@ export default function ContactForm() {
                         </span>
                     )}
                     <button
+                        type="button"
                         disabled={formik.isSubmitting}
                         onClick={formik.handleSubmit}
                         className="mx-auto bg-[#FD9E07] text-[15px] font-600 text-white font-redHat w-[138px] h-[42px] cursor-pointer flex justify-center items-center rounded-md"
@@ -188,3 +330,7 @@ export default function ContactForm() {
 
 
 
+// <div className="hidden md:absolute md:top-[-20px] md:right-[-35px] md:rotate-45 md:w-[70px] md:h-[70px] md:bg-[#FD9E07] md:rounded-full md:flex md:items-center md:justify-center">
+// <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FD9E07] opacity-75"></span>
+// <p className="text-center text-white font-redHat font-700 md:font-900 md:text-[14px]">SAVE <br /> 10%</p>
+// </div>

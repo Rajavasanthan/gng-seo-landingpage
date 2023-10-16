@@ -12,6 +12,7 @@ import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
 import Technologies from "../components/Technologies";
 import FloatedPhone from "../components/FloatedPhone";
+import PricingModel from "../components/PricingModel";
 
 export default function Home() {
     const [showScrollToTopBtn, setshowScrollToTopBtn] = useState(false);
@@ -32,18 +33,18 @@ export default function Home() {
             <FloatedPhone className={"fixed bottom-3 left-3"} />
             <Navbar />
             <HeroSectionOne />
-            <HeroSectionTwo />
             <Technologies />
+            <PricingModel />
             <HeroSectionFour />
             <HeroSectionFive />
             <HeroSectionSeven />
-            <FreeQuote />
             <Faq />
             <Footer />
         </div>
     );
 }
-
+//<HeroSectionTwo />
+//   <FreeQuote />
 // {showScrollToTopBtn &&
 //     <Fragment>
 //         <WhatsAppWidget className={"fixed bottom-[82px] right-3"} />

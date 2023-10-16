@@ -203,7 +203,7 @@ export default function Technologies() {
         setSelected(index)
     }
     return (
-        <div className="p-4 sm:p-2 md:p-0 max-w-7xl mx-auto">
+        <div className="p-4 mx-auto sm:p-2 md:p-0 max-w-7xl">
             <p className="text-[#3D4C61] text-[24px] sm:text-[35px] font-900 font-redHat text-center">
                 Technologies.
             </p>
