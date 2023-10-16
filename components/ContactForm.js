@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 import Select from "react-select";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TECHNOLOGY_OPT = [
     {
@@ -90,7 +90,7 @@ function CustomInput({ placeholder, imgSrc, type, id, onChange, onBlur, value })
     )
 }
 
-export default function ContactForm() {
+export default function ContactForm({ setFormError }) {
     const router = useRouter();
     const [tech, setTech] = useState([]);
     const { campaignId } = router.query;
@@ -100,12 +100,12 @@ export default function ContactForm() {
             technology: "",
             experience: "",
             budgets: "",
-            joining: "",
+            joining: "1 to 6 Months",
             name: "",
             email: "",
             phone: "",
             message: "",
-            pricingModel: "",
+            pricingModel: "Hourly",
             company: "",
         },
         validationSchema: Yup.object({
@@ -118,12 +118,10 @@ export default function ContactForm() {
                 .required("Phone Number is Required"),
             company: Yup.string().required().min(3, "Enter message atlest 3 character long"),
             technology: Yup.string().required("Technology is Required"),
-            joining: Yup.string(),
-            pricingModel: Yup.string().required("Pricing Model is Required"),
         }),
         onSubmit: async (values) => {
             await sendEmail(values);
-            // console.log(values);
+            //console.log(values);
         },
     });
 
@@ -154,6 +152,10 @@ export default function ContactForm() {
             });
     };
 
+    useEffect(() => {
+        setFormError(formik)
+    }, [formik.errors]);
+
     return (
         <div className="border rounded-md shadow-md bg-[#FBF8F4] border-[#FD9E07] mx-2 md:mx-0 mt-4 relative">
             <Toaster />
@@ -172,7 +174,7 @@ export default function ContactForm() {
                             await formik.setFieldValue("joining", e.target.value);
                         }}>
                             <div className="flex w-full">
-                                <input className="accent-[#FD9E07]" type="radio" id="joining" name="joining" value="1 to 6 Months" />
+                                <input className="accent-[#FD9E07]" type="radio" id="joining" name="joining" value="1 to 6 Months" defaultChecked />
                                 <label className="text-[14px] font-500 text-center ml-1">1 to 6 Months</label>
                             </div>
                             <div className="flex w-full">
@@ -181,13 +183,6 @@ export default function ContactForm() {
                             </div>
                         </div>
                     </div>
-
-                    {formik.touched.pricingModel && (
-                        <span className="mt-0 ml-1 text-xs tracking-wide text-red-500 font-redHat">
-                            {formik.errors.pricingModel}
-                        </span>
-                    )}
-
                     <div className="space-y-2">
                         <p className="text-[15px] text-[#FD9E07] font-500 ml-3 md:ml-0">Pricing model <span className="text-red-600">*</span></p>
                         <div className="flex justify-start px-3 md:px-0" onChange={async (e) => {
@@ -195,22 +190,16 @@ export default function ContactForm() {
                             await formik.setFieldValue("pricingModel", e.target.value);
                         }}>
                             <div className="flex w-full">
+                                <input className="accent-[#FD9E07] border-none" type="radio" id="pricingModel" name="pricingModel" value="Hourly" defaultChecked />
+                                <label className="text-[14px] font-500 text-center ml-1">Hourly</label>
+                            </div>
+                            <div className="flex w-full">
                                 <input className="accent-[#FD9E07]" type="radio" id="pricingModel" name="pricingModel" value="Fixed" />
                                 <label className="text-[14px] font-500 text-center ml-1">Fixed</label>
                             </div>
-                            <div className="flex w-full">
-                                <input className="accent-[#FD9E07] border-none" type="radio" id="pricingModel" name="pricingModel" value="Hourly" />
-                                <label className="text-[14px] font-500 text-center ml-1">Hourly</label>
-                            </div>
+
                         </div>
                     </div>
-
-                    {formik.touched.pricingModel && (
-                        <span className="mt-0 ml-1 text-xs tracking-wide text-red-500 font-redHat">
-                            {formik.errors.pricingModel}
-                        </span>
-                    )}
-
                     <div className="border-b border-[#FD9E07]">
                         <Select
                             name="technology"
@@ -239,7 +228,7 @@ export default function ContactForm() {
                             }}
                         />
                     </div>
-                    {formik.touched.technology && (
+                    {(formik.touched.technology && formik.errors.technology) && (
                         <span className="mt-0 ml-1 text-xs tracking-wide text-red-500 font-redHat">
                             {formik.errors.technology}
                         </span>

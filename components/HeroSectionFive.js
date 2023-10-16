@@ -24,7 +24,7 @@ export default function HeroSectionFive() {
                 </div>
             </div>
             <div className="bg-[#F7F8FD]">
-                <div className="p-4 mx-auto max-w-7xl sm:p-2 md:pt-32">
+                <div className="p-4 mx-auto mt-16 max-w-7xl sm:p-2 md:pt-32">
                     <div className="flex justify-center sm:h-[100px]">
                         <p className="text-[#3D4C61] text-[24px] sm:text-[35px] font-900 font-redHat flex justify-start items-center">
                             <img src="/assets/square2.png" alt="squares" className="h-8 mr-2" />

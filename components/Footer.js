@@ -13,16 +13,16 @@ const Footer = () => {
                     <div className="m-auto">
                         <p className="font-700 text-[25px] font-redHat text-[#3D4C61]">Address</p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
-                            8/4 Poomagal Second Street
+                            Regus Prince Infocity ll,
                         </p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
-                            Ambal Nagar,
+                            nit No 1, 1st Floor, 283/3 & 283/4,
                         </p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
-                            Ekkattuthangal, Chennai, Tamil Nadu
+                            Rajiv Gandhi Salai(OMR), Kandanchavady,
                         </p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
-                            Pin : 600032, India.
+                            Perungudi, Chennai 600 096, India.
                         </p>
                     </div>
                     <div className="m-auto md:m-0">
@@ -30,7 +30,7 @@ const Footer = () => {
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
                             Email:{" "}
                             <a href="mailto:vasanth@gridsandguides.com">
-                                vasanth@gridsandguides.com
+                                info@gridsandguides.com
                             </a>
                         </p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
@@ -54,8 +54,7 @@ const Footer = () => {
             </div>
             <div className="bg-[#262626] px-6 py-4">
                 <p className="text-white text-[16px] md:text-[16px] text-center">
-                    Grids and Guides • All Right Reserved © "Grids and Guides" Group of
-                    Companies.{" "}
+                    ©Grids and Guides Technologies Pvt Ltd• All Right Reserved
                 </p>
             </div>
         </div>
