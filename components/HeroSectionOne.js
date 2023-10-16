@@ -6,12 +6,11 @@ import React, { useState } from "react";
 import ClientCard from "./ClientCard";
 
 export default function HeroSectionOne() {
-    const [formError, setFormError] = useState(null);
     const router = useRouter();
-    console.log(formError)
+
     return (
         <div id="homepage">
-            <div className={`bg-[#F7F8FD] ${(formError && formError.isValid) ? "h-[1200px]" : "h-[1350px]"} ${(formError && formError.isValid) ? "md:h-[780px]" : "md:h-[900px]"} mt-[60px] md:mt-[80px]`}>
+            <div className={`bg-[#F7F8FD] pb-[50px] pt-[50px] md:pb-[100px] `}>
                 <div className="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
                     <div className="p-4 m-auto sm:p-2 md:p-0">
                         <p className="text-[#FD9E07] text-[24px] font-500">
@@ -46,7 +45,7 @@ export default function HeroSectionOne() {
                         }
                     </div>
                     <div className="w-full ml-auto md:my-10 md:w-[70%]" id="contactform">
-                        <ContactForm setFormError={setFormError} />
+                        <ContactForm />
                     </div>
                 </div>
             </div>
@@ -80,7 +79,7 @@ export default function HeroSectionOne() {
 }
 
 // <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FD9E07] opacity-30"></span>
-
+// ${(formError && formError.isValid) ? "h-[1200px]" : "h-[1350px]"} ${(formError && formError.isValid) ? "md:h-[780px]" : "md:h-[900px]"} mt-[60px] md:mt-[80px]
 
 // <div className="bg-[#FD9E07] max-w-7xl mx-auto mt-24 pt-10 pb-20">
 //                 <div className="flex justify-center sm:h-[100px] mb-8">
