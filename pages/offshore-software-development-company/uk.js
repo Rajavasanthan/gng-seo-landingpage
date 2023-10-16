@@ -32,9 +32,9 @@ export default function Home() {
             <HeroSectionOne />
             <Technologies />
             <PricingModel />
+            <HeroSectionSeven />
             <HeroSectionFour />
             <HeroSectionFive />
-            <HeroSectionSeven />
             <Faq />
             <Footer />
         </div>

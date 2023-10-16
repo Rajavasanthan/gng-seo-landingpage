@@ -27,7 +27,7 @@ export default function HeroSectionSeven() {
             <div className="flex flex-col items-center justify-between md:flex-row">
                 <div className="px-3 w-full md:w-[600px]">
                     <img src="/assets/squres.png" alt="squares" className="h-10 mb-2" />
-                    <p className="text-[#3D4C61] font-900 text-[24px] sm:text-[35px] font-redHat">Some of Our <br /> Satisfied Clients.</p>
+                    <p className="text-[#3D4C61] font-900 text-[24px] sm:text-[35px] font-redHat">What our clients say <br />about us.</p>
                     <p className="text-[#3D4C61] font-400 text-[16px] font-redHat my-4 w-full md:w-2/3">
                         Grids and Guides is a top Web Design Company in Chennai Started in 2016 with a small team and now we larger.
                     </p>

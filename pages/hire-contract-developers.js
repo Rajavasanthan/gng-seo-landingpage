@@ -30,14 +30,13 @@ export default function Home() {
     return (
         <div className="relative">
             {showScrollToTopBtn && <ScrollToTop className={"fixed bottom-3 right-3"} />}
-            <FloatedPhone className={"fixed bottom-3 left-3"} />
             <Navbar />
             <HeroSectionOne />
             <Technologies />
             <PricingModel />
+            <HeroSectionSeven />
             <HeroSectionFour />
             <HeroSectionFive />
-            <HeroSectionSeven />
             <Faq />
             <Footer />
         </div>

@@ -2,16 +2,16 @@ import { useRouter } from "next/router";
 import HeroSectionOneCard from "./HeroSectionOneCard";
 import ContactForm from './ContactForm'
 import PricingCard from "./PricingCard";
-import React from "react";
+import React, { useState } from "react";
 import ClientCard from "./ClientCard";
 
 export default function HeroSectionOne() {
-
+    const [formError, setFormError] = useState(null);
     const router = useRouter();
-
+    console.log(formError)
     return (
         <div id="homepage">
-            <div className="bg-[#F7F8FD] h-[1000px] md:h-[780px] mt-[60px] md:mt-[80px]">
+            <div className={`bg-[#F7F8FD] ${(formError && formError.isValid) ? "h-[1200px]" : "h-[1350px]"} ${(formError && formError.isValid) ? "md:h-[780px]" : "md:h-[900px]"} mt-[60px] md:mt-[80px]`}>
                 <div className="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
                     <div className="p-4 m-auto sm:p-2 md:p-0">
                         <p className="text-[#FD9E07] text-[24px] font-500">
@@ -46,7 +46,7 @@ export default function HeroSectionOne() {
                         }
                     </div>
                     <div className="w-full ml-auto md:my-10 md:w-[70%]" id="contactform">
-                        <ContactForm />
+                        <ContactForm setFormError={setFormError} />
                     </div>
                 </div>
             </div>
