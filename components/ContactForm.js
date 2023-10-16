@@ -120,8 +120,8 @@ export default function ContactForm({ setFormError }) {
             technology: Yup.string().required("Technology is Required"),
         }),
         onSubmit: async (values) => {
-            await sendEmail(values);
-            //console.log(values);
+            // await sendEmail(values);
+            console.log(values);
         },
     });
 
@@ -152,6 +152,11 @@ export default function ContactForm({ setFormError }) {
             });
     };
 
+    const onChangeRadio = async (e, name) => {
+        e.stopPropagation();
+        await formik.setFieldValue(name, e.target.value);
+    }
+
     useEffect(() => {
         setFormError(formik)
     }, [formik.errors]);
@@ -170,32 +175,30 @@ export default function ContactForm({ setFormError }) {
                     <div className="space-y-2">
                         <p className="text-[15px] text-[#FD9E07] font-500 ml-3 md:ml-0">Engagement Timeline <span className="text-red-600">*</span></p>
                         <div className="flex justify-start px-3 md:px-0" onChange={async (e) => {
-                            e.stopPropagation();
-                            await formik.setFieldValue("joining", e.target.value);
+                            await onChangeRadio(e, "joining")
                         }}>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07]" type="radio" id="joining" name="joining" value="1 to 6 Months" defaultChecked />
-                                <label className="text-[14px] font-500 text-center ml-1">1 to 6 Months</label>
+                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer">1 to 6 Months</label>
                             </div>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07] border-none" type="radio" id="joining" name="joining" value="More Than 6 Months" />
-                                <label className="text-[14px] font-500 text-center ml-1">More than 6 Months</label>
+                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer">More than 6 Months</label>
                             </div>
                         </div>
                     </div>
                     <div className="space-y-2">
                         <p className="text-[15px] text-[#FD9E07] font-500 ml-3 md:ml-0">Pricing model <span className="text-red-600">*</span></p>
                         <div className="flex justify-start px-3 md:px-0" onChange={async (e) => {
-                            e.stopPropagation();
-                            await formik.setFieldValue("pricingModel", e.target.value);
+                            await onChangeRadio(e, "pricingModel")
                         }}>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07] border-none" type="radio" id="pricingModel" name="pricingModel" value="Hourly" defaultChecked />
-                                <label className="text-[14px] font-500 text-center ml-1">Hourly</label>
+                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer">Hourly</label>
                             </div>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07]" type="radio" id="pricingModel" name="pricingModel" value="Fixed" />
-                                <label className="text-[14px] font-500 text-center ml-1">Fixed</label>
+                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer">Fixed</label>
                             </div>
 
                         </div>
