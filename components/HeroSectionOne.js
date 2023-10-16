@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import ClientCard from "./ClientCard";
 
 export default function HeroSectionOne() {
-    const [formError, setFormError] = useState(null);
     const router = useRouter();
 
     return (
@@ -46,7 +45,7 @@ export default function HeroSectionOne() {
                         }
                     </div>
                     <div className="w-full ml-auto md:my-10 md:w-[70%]" id="contactform">
-                        <ContactForm setFormError={setFormError} />
+                        <ContactForm />
                     </div>
                 </div>
             </div>

@@ -90,7 +90,7 @@ function CustomInput({ placeholder, imgSrc, type, id, onChange, onBlur, value })
     )
 }
 
-export default function ContactForm({ setFormError }) {
+export default function ContactForm() {
     const router = useRouter();
     const [tech, setTech] = useState([]);
     const { campaignId } = router.query;
@@ -120,8 +120,8 @@ export default function ContactForm({ setFormError }) {
             technology: Yup.string().required("Technology is Required"),
         }),
         onSubmit: async (values) => {
-            // await sendEmail(values);
-            console.log(values);
+            await sendEmail(values);
+            // console.log(values);
         },
     });
 
@@ -157,10 +157,6 @@ export default function ContactForm({ setFormError }) {
         await formik.setFieldValue(name, e.target.value);
     }
 
-    useEffect(() => {
-        setFormError(formik)
-    }, [formik.errors]);
-
     return (
         <div className="border rounded-md shadow-md bg-[#FBF8F4] border-[#FD9E07] mx-2 md:mx-0 mt-4 relative">
             <Toaster />
@@ -178,12 +174,12 @@ export default function ContactForm({ setFormError }) {
                             await onChangeRadio(e, "joining")
                         }}>
                             <div className="flex w-full">
-                                <input className="accent-[#FD9E07]" type="radio" id="joining" name="joining" value="1 to 6 Months" defaultChecked />
-                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">1 to 6 Months</label>
+                                <input className="accent-[#FD9E07]" type="radio" id="1 to 6 Months" name="joining" value="1 to 6 Months" defaultChecked />
+                                <label for="1 to 6 Months" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">1 to 6 Months</label>
                             </div>
                             <div className="flex w-full">
-                                <input className="accent-[#FD9E07] border-none" type="radio" id="joining" name="joining" value="More Than 6 Months" />
-                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">More than 6 Months</label>
+                                <input className="accent-[#FD9E07] border-none" type="radio" id="More Than 6 Months" name="joining" value="More Than 6 Months" />
+                                <label for="More Than 6 Months" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">More than 6 Months</label>
                             </div>
                         </div>
                     </div>
@@ -193,12 +189,12 @@ export default function ContactForm({ setFormError }) {
                             await onChangeRadio(e, "pricingModel")
                         }}>
                             <div className="flex w-full">
-                                <input className="accent-[#FD9E07] border-none" type="radio" id="pricingModel" name="pricingModel" value="Hourly" defaultChecked />
-                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Hourly</label>
+                                <input className="accent-[#FD9E07] border-none" type="radio" id="Hourly" name="pricingModel" value="Hourly" defaultChecked />
+                                <label for="Hourly" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Hourly</label>
                             </div>
                             <div className="flex w-full">
-                                <input className="accent-[#FD9E07]" type="radio" id="pricingModel" name="pricingModel" value="Fixed" />
-                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Fixed</label>
+                                <input className="accent-[#FD9E07]" type="radio" id="Fixed" name="pricingModel" value="Fixed" />
+                                <label for="Fixed" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Fixed</label>
                             </div>
                         </div>
                     </div>
