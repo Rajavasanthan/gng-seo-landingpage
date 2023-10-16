@@ -179,11 +179,11 @@ export default function ContactForm({ setFormError }) {
                         }}>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07]" type="radio" id="joining" name="joining" value="1 to 6 Months" defaultChecked />
-                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer">1 to 6 Months</label>
+                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">1 to 6 Months</label>
                             </div>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07] border-none" type="radio" id="joining" name="joining" value="More Than 6 Months" />
-                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer">More than 6 Months</label>
+                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">More than 6 Months</label>
                             </div>
                         </div>
                     </div>
@@ -194,13 +194,12 @@ export default function ContactForm({ setFormError }) {
                         }}>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07] border-none" type="radio" id="pricingModel" name="pricingModel" value="Hourly" defaultChecked />
-                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer">Hourly</label>
+                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Hourly</label>
                             </div>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07]" type="radio" id="pricingModel" name="pricingModel" value="Fixed" />
-                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer">Fixed</label>
+                                <label className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Fixed</label>
                             </div>
-
                         </div>
                     </div>
                     <div className="border-b border-[#FD9E07]">
