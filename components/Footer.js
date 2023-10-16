@@ -16,7 +16,7 @@ const Footer = () => {
                             Regus Prince Infocity ll,
                         </p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
-                            nit No 1, 1st Floor, 283/3 & 283/4,
+                            Unit No 1, 1st Floor, 283/3 & 283/4,
                         </p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
                             Rajiv Gandhi Salai(OMR), Kandanchavady,
