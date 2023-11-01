@@ -14,9 +14,11 @@ export default function HeroSectionOne() {
             <div className={`bg-[#F7F8FD] pb-[50px] pt-[50px] md:pb-[100px] `}>
                 <div className="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
                     <div className="p-4 m-auto sm:p-2 md:p-0">
-                        <p className="text-[#FD9E07] text-[24px] font-500">
-                            Get the Best of Both worlds
-                        </p>
+                        {!router.pathname.includes("hire-nodejs-developers") &&
+                            <p className="text-[#FD9E07] text-[24px] font-500">
+                                Get the Best of Both worlds
+                            </p>
+                        }
                         {router.pathname.includes("offshore-software-development-company") &&
                             <React.Fragment>
                                 <p className="text-[#3D4C61] text-[28px] sm:text-[40px] font-900">
@@ -47,9 +49,14 @@ export default function HeroSectionOne() {
 
                         {router.pathname.includes("hire-nodejs-developers") &&
                             <React.Fragment>
+                                <div className="my-3">
+                                    <div className="">
+                                        <img src="/assets/nodejs1.svg" className="h-16" alt={"nodejs"} />
+                                    </div>
+                                </div>
                                 <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">
                                     Hire Dedicated <br />
-                                    Remote Nodejs Developers
+                                    Remote Nodejs & Nest.js Developers
                                 </p>
                                 <ul className="p-4 list-disc">
                                     <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>100% In-House Team:</strong> Say goodbye to freelancers. Work with a cohesive team committed to your project's success.</li>

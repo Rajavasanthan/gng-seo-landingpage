@@ -13,6 +13,16 @@ const PRODUCT_ENGINEERING = [
         height: "h-13"
     },
     {
+        imgSrc: "/assets/node.svg",
+        name: "Node",
+        height: "h-16"
+    },
+    {
+        imgSrc: "/assets/nest.svg",
+        name: "Nest",
+        height: "h-14"
+    },
+    {
         imgSrc: "/assets/next.svg",
         name: "Next",
         height: "h-12"
@@ -26,16 +36,6 @@ const PRODUCT_ENGINEERING = [
         imgSrc: "https://www.vectorlogo.zone/logos/nuxtjs/nuxtjs-ar21.svg",
         name: "Vuejs",
         height: "h-15"
-    },
-    {
-        imgSrc: "/assets/nest.svg",
-        name: "Nest",
-        height: "h-14"
-    },
-    {
-        imgSrc: "/assets/node.svg",
-        name: "Node",
-        height: "h-16"
     },
     {
         imgSrc: "/assets/python.svg",
