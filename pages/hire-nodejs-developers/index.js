@@ -1,12 +1,10 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Faq from "../../components/Faq";
 import Footer from "../../components/Footer";
-import FreeQuote from "../../components/FreeQuote";
 import HeroSectionFive from "../../components/HeroSectionFive";
 import HeroSectionFour from "../../components/HeroSectionFour";
 import HeroSectionOne from "../../components/HeroSectionOne";
 import HeroSectionSeven from "../../components/HeroSectionSeven";
-import HeroSectionTwo from "../../components/HeroSectionTwo";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";
 import Technologies from "../../components/Technologies";
@@ -48,14 +46,3 @@ export default function Home() {
         </div>
     );
 }
-
-//   <FreeQuote />
-// {showScrollToTopBtn &&
-//     <Fragment>
-//         <WhatsAppWidget className={"fixed bottom-[82px] right-3"} />
-//         <ScrollToTop className={"fixed bottom-3 right-3"} />
-//     </Fragment>
-// }
-// {!showScrollToTopBtn &&
-//     <WhatsAppWidget className={"fixed bottom-3 right-3"} />
-// }

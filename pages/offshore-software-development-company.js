@@ -13,9 +13,11 @@ import ScrollToTop from "../components/ScrollToTop";
 import Technologies from "../components/Technologies";
 import FloatedPhone from "../components/FloatedPhone";
 import PricingModel from "../components/PricingModel";
+import GetFreeQuoteBtn from "../components/GetFreeQuoteBtn";
 
 export default function Home() {
     const [showScrollToTopBtn, setshowScrollToTopBtn] = useState(false);
+    const [showQuoteBtn, setshowQuoteBtn] = useState(false);
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -24,12 +26,18 @@ export default function Home() {
             } else {
                 setshowScrollToTopBtn(false);
             }
+            if (window.scrollY > 400) {
+                setshowQuoteBtn(true);
+            } else {
+                setshowQuoteBtn(false);
+            }
         });
     }, []);
 
     return (
         <div className="relative">
-            {showScrollToTopBtn && <ScrollToTop className={"fixed bottom-3 right-3"} />}
+            {showScrollToTopBtn && <ScrollToTop className={`fixed ${showQuoteBtn ? "bottom-16" : "bottom-3"} md:bottom-3 right-3`} />}
+            {showQuoteBtn && <GetFreeQuoteBtn />}
             <Navbar />
             <HeroSectionOne />
             <Technologies />

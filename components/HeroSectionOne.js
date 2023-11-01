@@ -43,6 +43,20 @@ export default function HeroSectionOne() {
                                 </ul>
                             </React.Fragment>
                         }
+
+                        {router.pathname.includes("hire-nodejs-developers") &&
+                            <React.Fragment>
+                                <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">
+                                    Hire Dedicated <br />
+                                    Remote Nodejs Developers
+                                </p>
+                                <ul className="p-4 list-disc">
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>100% In-House Team:</strong> Say goodbye to freelancers. Work with a cohesive team committed to your project's success.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Hassle-Free Onboarding:</strong> Skip the hiring headaches and jumpstart your project swiftly.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Flexible Engagement:</strong> Hire our developers on an hourly or monthly basis as per your project needs.</li>
+                                </ul>
+                            </React.Fragment>
+                        }
                     </div>
                     <div className="w-full ml-auto md:my-10 md:w-[70%]" id="contactform">
                         <ContactForm />

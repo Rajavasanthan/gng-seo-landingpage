@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import PricingCard from "./PricingCard";
 
 export default function PricingModel() {
@@ -19,6 +20,21 @@ export default function PricingModel() {
                         image={"/assets/calendar.svg"}
                         text={"Fixed monthly pricing model"}
                     />
+                </div>
+            </div>
+            <div className="flex items-center justify-center w-full px-2 mt-14">
+                <div className="relative">
+                    <Link
+                        to="contactform"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={1200}
+                        className="w-full hover:shadow-2xl text-center md:w-1/3 bg-[#3D4C61] text-[15px] text-white font-redHat px-3 py-3 rounded cursor-pointer"
+                    >
+                        Get Free Quote Now
+                    </Link>
+                    <span className="absolute animate-pulse w-3 h-3 bg-[#FD9E07] rounded-full top-[-11px] right-[-4px]"></span>
                 </div>
             </div>
         </div>
