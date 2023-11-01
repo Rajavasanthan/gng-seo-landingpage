@@ -73,7 +73,7 @@ const Faq = () => {
     useEffect(() => {
         if (router.pathname.includes("offshore-software-development-company")) {
             setFaqData(FAQ_OFFSHORE_DOMAIN)
-        } else if (router.pathname.includes("hire-contract-developers")) {
+        } else if (router.pathname.includes("hire-contract-developers") || router.pathname.includes("hire-nodejs-developers")) {
             setFaqData(FAQ_HIRE_CONTRACT_DEV_DOMAIN)
         }
     }, []);

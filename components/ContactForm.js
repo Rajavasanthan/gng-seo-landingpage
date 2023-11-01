@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 import Select from "react-select";
 import { useEffect, useState } from "react";
+import React from 'react'
 
 const TECHNOLOGY_OPT = [
     {
@@ -94,10 +95,11 @@ export default function ContactForm() {
     const router = useRouter();
     const [tech, setTech] = useState([]);
     const { campaignId } = router.query;
+    const isHireNodejsDev = router.pathname.includes("hire-nodejs-developers");
 
     const formik = useFormik({
         initialValues: {
-            technology: "",
+            technology: isHireNodejsDev ? "Nodejs" : "",
             experience: "",
             budgets: "",
             joining: "1 to 6 Months",
@@ -175,11 +177,11 @@ export default function ContactForm() {
                         }}>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07]" type="radio" id="1 to 6 Months" name="joining" value="1 to 6 Months" defaultChecked />
-                                <label for="1 to 6 Months" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">1 to 6 Months</label>
+                                <label htmlFor="1 to 6 Months" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">1 to 6 Months</label>
                             </div>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07] border-none" type="radio" id="More Than 6 Months" name="joining" value="More Than 6 Months" />
-                                <label for="More Than 6 Months" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">More than 6 Months</label>
+                                <label htmlFor="More Than 6 Months" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">More than 6 Months</label>
                             </div>
                         </div>
                     </div>
@@ -190,48 +192,51 @@ export default function ContactForm() {
                         }}>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07] border-none" type="radio" id="Hourly" name="pricingModel" value="Hourly" defaultChecked />
-                                <label for="Hourly" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Hourly</label>
+                                <label htmlFor="Hourly" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Hourly</label>
                             </div>
                             <div className="flex w-full">
                                 <input className="accent-[#FD9E07]" type="radio" id="Fixed" name="pricingModel" value="Fixed" />
-                                <label for="Fixed" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Fixed</label>
+                                <label htmlFor="Fixed" className="text-[14px] font-500 text-center ml-1 cursor-pointer flex-none">Fixed</label>
                             </div>
                         </div>
                     </div>
-                    <div className="border-b border-[#FD9E07]">
-                        <Select
-                            name="technology"
-                            isSearchable={false}
-                            placeholder="Choose a Technology"
-                            options={TECHNOLOGY_OPT}
-                            isMulti
-                            value={tech}
-                            styles={{
-                                control: (baseStyles) => ({
-                                    ...baseStyles,
-                                    width: "100%",
-                                    border: 0,
-                                    outline: "none",
-                                    boxShadow: "none",
-                                    backgroundColor: "#FBF8F4"
-                                }),
-                            }}
-                            //onFocus={formik.handleBlur}
-                            onBlur={() => formik.setFieldTouched("technology", true)}
-                            onChange={async (val) => {
-                                setTech(val);
-                                const valArr = [];
-                                val.forEach((opt) => valArr.push(opt.value));
-                                await formik.setFieldValue("technology", valArr.join(","));
-                            }}
-                        />
-                    </div>
-                    {(formik.touched.technology && formik.errors.technology) && (
-                        <span className="mt-0 ml-1 text-xs tracking-wide text-red-500 font-redHat">
-                            {formik.errors.technology}
-                        </span>
-                    )}
-
+                    {!isHireNodejsDev &&
+                        <React.Fragment>
+                            <div className="border-b border-[#FD9E07]">
+                                <Select
+                                    name="technology"
+                                    isSearchable={false}
+                                    placeholder="Choose a Technology"
+                                    options={TECHNOLOGY_OPT}
+                                    isMulti
+                                    value={tech}
+                                    styles={{
+                                        control: (baseStyles) => ({
+                                            ...baseStyles,
+                                            width: "100%",
+                                            border: 0,
+                                            outline: "none",
+                                            boxShadow: "none",
+                                            backgroundColor: "#FBF8F4"
+                                        }),
+                                    }}
+                                    //onFocus={formik.handleBlur}
+                                    onBlur={() => formik.setFieldTouched("technology", true)}
+                                    onChange={async (val) => {
+                                        setTech(val);
+                                        const valArr = [];
+                                        val.forEach((opt) => valArr.push(opt.value));
+                                        await formik.setFieldValue("technology", valArr.join(","));
+                                    }}
+                                />
+                            </div>
+                            {(formik.touched.technology && formik.errors.technology) && (
+                                <span className="mt-0 ml-1 text-xs tracking-wide text-red-500 font-redHat">
+                                    {formik.errors.technology}
+                                </span>
+                            )}
+                        </React.Fragment>
+                    }
                     <CustomInput
                         placeholder="Full Name"
                         imgSrc="/assets/user.svg"
@@ -290,7 +295,7 @@ export default function ContactForm() {
                         type="button"
                         disabled={formik.isSubmitting}
                         onClick={formik.handleSubmit}
-                        className="mx-auto bg-[#FD9E07] text-[15px] font-600 text-white font-redHat w-[138px] h-[42px] cursor-pointer flex justify-center items-center rounded-md"
+                        className="mx-auto bg-[#FD9E07] text-[15px] font-600 text-white font-redHat w-[160px] h-[42px] cursor-pointer flex justify-center items-center rounded-md"
                     >
                         {formik.isSubmitting && (
                             <img
@@ -299,7 +304,7 @@ export default function ContactForm() {
                                 alt="spinner"
                             />
                         )}
-                        {!formik.isSubmitting && "Get Quote Now"}
+                        {!formik.isSubmitting && "Get Free Quote Now"}
                     </button>
                     <div className="flex items-center justify-center mt-2 space-x-2">
                         <img

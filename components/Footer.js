@@ -29,15 +29,15 @@ const Footer = () => {
                         <p className="font-700 text-[25px] font-redHat text-[#3D4C61]">Contact</p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
                             Email:{" "}
-                            <a href="mailto:vasanth@gridsandguides.com">
+                            <a href="mailto:vasanth@gridsandguides.com" className="text-blue-500 underline">
                                 info@gridsandguides.com
                             </a>
                         </p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
-                            Phone: <a href="tel:+919884327203">+91-9884327203</a>
+                            Phone: <a href="tel:+919884327203" className="text-blue-500 underline">+91-9884327203</a>
                         </p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat ml-14 md:ml-16">
-                            <a href="tel:+919884891090">+91-9884891090</a>
+                            <a href="tel:+919884891090" className="text-blue-500 underline">+91-9884891090</a>
                         </p>
                         <p className="font-400 text-[16px] sm:text-[18px] font-redHat">
                             Visit Us:{" "}

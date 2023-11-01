@@ -4,6 +4,7 @@ import ContactForm from './ContactForm'
 import PricingCard from "./PricingCard";
 import React, { useState } from "react";
 import ClientCard from "./ClientCard";
+import { Link } from "react-scroll";
 
 export default function HeroSectionOne() {
     const router = useRouter();
@@ -13,9 +14,11 @@ export default function HeroSectionOne() {
             <div className={`bg-[#F7F8FD] pb-[50px] pt-[50px] md:pb-[100px] `}>
                 <div className="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
                     <div className="p-4 m-auto sm:p-2 md:p-0">
-                        <p className="text-[#FD9E07] text-[24px] font-500">
-                            Get the Best of Both worlds
-                        </p>
+                        {!router.pathname.includes("hire-nodejs-developers") &&
+                            <p className="text-[#FD9E07] text-[24px] font-500">
+                                Get the Best of Both worlds
+                            </p>
+                        }
                         {router.pathname.includes("offshore-software-development-company") &&
                             <React.Fragment>
                                 <p className="text-[#3D4C61] text-[28px] sm:text-[40px] font-900">
@@ -35,6 +38,25 @@ export default function HeroSectionOne() {
                                 <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">
                                     Hire Dedicated <br />
                                     Remote Developers
+                                </p>
+                                <ul className="p-4 list-disc">
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>100% In-House Team:</strong> Say goodbye to freelancers. Work with a cohesive team committed to your project's success.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Hassle-Free Onboarding:</strong> Skip the hiring headaches and jumpstart your project swiftly.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Flexible Engagement:</strong> Hire our developers on an hourly or monthly basis as per your project needs.</li>
+                                </ul>
+                            </React.Fragment>
+                        }
+
+                        {router.pathname.includes("hire-nodejs-developers") &&
+                            <React.Fragment>
+                                <div className="my-3">
+                                    <div className="">
+                                        <img src="/assets/nodejs1.svg" className="h-16" alt={"nodejs"} />
+                                    </div>
+                                </div>
+                                <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">
+                                    Hire Dedicated <br />
+                                    Remote Nodejs & Nest.js Developers
                                 </p>
                                 <ul className="p-4 list-disc">
                                     <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>100% In-House Team:</strong> Say goodbye to freelancers. Work with a cohesive team committed to your project's success.</li>
@@ -71,7 +93,22 @@ export default function HeroSectionOne() {
                     text={"Cups of Coffee"}
                 />
             </div>
-            <div className="pt-10 pb-20 mx-auto mt-16 max-w-7xl">
+            <div className="flex items-center justify-center w-full px-2 mt-14">
+                <div className="relative">
+                    <Link
+                        to="contactform"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={1200}
+                        className="w-full hover:shadow-2xl text-center md:w-1/3 bg-[#3D4C61] text-[15px] text-white font-redHat px-3 py-3 rounded cursor-pointer"
+                    >
+                        Get Free Quote Now
+                    </Link>
+                    <span className="absolute animate-pulse w-3 h-3 bg-[#FD9E07] rounded-full top-[-11px] right-[-4px]"></span>
+                </div>
+            </div>
+            <div className="pb-20 mx-auto mt-16 max-w-7xl">
                 <ClientCard />
             </div>
         </div>

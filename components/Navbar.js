@@ -32,7 +32,7 @@ export default function Navbar() {
                                 duration={1200}
                                 className="bg-[#3D4C61] text-[15px] text-white font-redHat px-3 py-2 rounded cursor-pointer"
                             >
-                                Get Free Quote
+                                Get Free Quote Now
                             </Link>
                             <span className="animate-pulse absolute w-3 h-3 bg-[#FD9E07] rounded-full top-[-13px] right-[-4px]"></span>
                         </li>
