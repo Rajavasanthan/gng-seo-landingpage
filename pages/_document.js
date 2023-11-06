@@ -24,6 +24,18 @@ export default function Document() {
                 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
                 <meta NAME="geo.placename" CONTENT="Tamil Nadu" />
                 <meta NAME="geo.region" CONTENT="India" />
+                <Script src="https://www.googletagmanager.com/gtag/js?id=AW-992542297" />
+                <Script id="google-analytics">
+                    {`
+                    window.dataLayer = window.dataLayer || []; 
+                    function gtag(){
+                        dataLayer.push(arguments);
+                    } 
+                    gtag('js', new Date()); 
+                    gtag('config', 'AW-992542297');
+                    gtag('event', 'conversion', {'send_to': 'AW-992542297/GNLmCJbc5PIYENn8o9kD'});
+                  `}
+                </Script>
                 <Script strategy="afterInteractive" dangerouslySetInnerHTML={{
                     __html: `
                     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
