@@ -8,13 +8,15 @@ import { Link } from "react-scroll";
 
 export default function HeroSectionOne() {
     const router = useRouter();
-
+    const isReactOrNodejsOrMobileDevLink = !router.pathname.includes("hire-nodejs-developers")
+        && !router.pathname.includes("hire-mobileapp-developers")
+        && !router.pathname.includes("hire-reactjs-developers");
     return (
         <div id="homepage">
             <div className={`bg-[#F7F8FD] pb-[50px] pt-[50px] md:pb-[100px] `}>
                 <div className="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
                     <div className="p-4 m-auto sm:p-2 md:p-0">
-                        {!router.pathname.includes("hire-nodejs-developers") &&
+                        {isReactOrNodejsOrMobileDevLink &&
                             <p className="text-[#FD9E07] text-[24px] font-500">
                                 Get the Best of Both worlds
                             </p>
@@ -57,6 +59,61 @@ export default function HeroSectionOne() {
                                 <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">
                                     Hire Dedicated <br />
                                     Remote Nodejs & Nest.js Developers
+                                </p>
+                                <ul className="p-4 list-disc">
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>100% In-House Team:</strong> Say goodbye to freelancers. Work with a cohesive team committed to your project's success.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Hassle-Free Onboarding:</strong> Skip the hiring headaches and jumpstart your project swiftly.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Flexible Engagement:</strong> Hire our developers on an hourly or monthly basis as per your project needs.</li>
+                                </ul>
+                            </React.Fragment>
+                        }
+
+                        {router.pathname.includes("hire-mobileapp-developers") &&
+                            <React.Fragment>
+                                <div className="flex flex-wrap items-center justify-around my-3 space-x-0 md:space-x-5 md:justify-start">
+                                    <div className="">
+                                        <img src="/assets/kotlin.svg" className="h-20" alt={"android"} />
+                                    </div>
+                                    <div className="">
+                                        <img src="/assets/swift.svg" className="h-20" alt={"swift"} />
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-start my-3 space-x-4">
+                                    <div className="">
+                                        <img src="/assets/react-native.svg" className="h-16" alt={"react native"} />
+                                    </div>
+                                    <div className="">
+                                        <img src="/assets/flutter.svg" className="h-16" alt={"flutter"} />
+                                    </div>
+                                    <div className="">
+                                        <img src="/assets/ionic.svg" className="h-10" alt={"ionic"} />
+                                    </div>
+                                </div>
+                                <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">
+                                    Hire Dedicated
+                                    Remote Mobile App Developers
+                                </p>
+                                <ul className="p-4 list-disc">
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>100% In-House Team:</strong> Say goodbye to freelancers. Work with a cohesive team committed to your project's success.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Hassle-Free Onboarding:</strong> Skip the hiring headaches and jumpstart your project swiftly.</li>
+                                    <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>Flexible Engagement:</strong> Hire our developers on an hourly or monthly basis as per your project needs.</li>
+                                </ul>
+                            </React.Fragment>
+                        }
+
+                        {router.pathname.includes("hire-reactjs-developers") &&
+                            <React.Fragment>
+                                <div className="flex items-center justify-start w-full my-3">
+                                    <div className="">
+                                        <img src="/assets/react.svg" className="h-28" alt={"reactjs"} />
+                                    </div>
+                                    <div className="">
+                                        <img src="/assets/next.svg" className="h-16 ml-[50px]" alt={"nextjs"} />
+                                    </div>
+                                </div>
+                                <p className="text-[#3D4C61] text-[28px] sm:text-[45px] font-900">
+                                    Hire Dedicated
+                                    Remote React.js Developers
                                 </p>
                                 <ul className="p-4 list-disc">
                                     <li className="text-[#A5A5A5] text-[16px] sm:text-[20px] sm:px-2 md:p-0 mt-2 text-justify"><strong>100% In-House Team:</strong> Say goodbye to freelancers. Work with a cohesive team committed to your project's success.</li>
