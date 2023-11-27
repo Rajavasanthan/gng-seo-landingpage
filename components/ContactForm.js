@@ -65,6 +65,29 @@ const TECHNOLOGY_OPT = [
     }
 ];
 
+const TECHNOLOGY_MOBILE_OPT = [
+    {
+        value: "Native Android (Kotlin)",
+        label: "Native Android (Kotlin)",
+    },
+    {
+        value: "Native iOS (Swift)",
+        label: "Native iOS (Swift)",
+    },
+    {
+        value: "Flutter",
+        label: "Flutter",
+    },
+    {
+        value: "React Native",
+        label: "React Native",
+    },
+    {
+        value: "Ionic",
+        label: "Ionic",
+    }
+];
+
 function CustomInput({ placeholder, imgSrc, type, id, onChange, onBlur, value }) {
     return (
         <div>
@@ -91,15 +114,29 @@ function CustomInput({ placeholder, imgSrc, type, id, onChange, onBlur, value })
     )
 }
 
+function chooseTech(router) {
+    if (router.pathname.includes("hire-nodejs-developers")) {
+        return "Nodejs"
+    } else if (router.pathname.includes("hire-reactjs-developers")) {
+        return "Reactjs"
+    } else if (router.pathname.includes("hire-mobileapp-developers")) {
+        return "Mobile App"
+    }
+    return "";
+}
 export default function ContactForm() {
     const router = useRouter();
     const [tech, setTech] = useState([]);
     const { campaignId } = router.query;
     const isHireNodejsDev = router.pathname.includes("hire-nodejs-developers");
+    const isHireReactjsDev = router.pathname.includes("hire-reactjs-developers");
+    const isHireMobileAppDev = router.pathname.includes("hire-mobileapp-developers");
+
+    console.log(chooseTech(router))
 
     const formik = useFormik({
         initialValues: {
-            technology: isHireNodejsDev ? "Nodejs" : "",
+            technology: chooseTech(router),
             experience: "",
             budgets: "",
             joining: "1 to 6 Months",
@@ -200,14 +237,14 @@ export default function ContactForm() {
                             </div>
                         </div>
                     </div>
-                    {!isHireNodejsDev &&
+                    {!isHireNodejsDev && !isHireReactjsDev &&
                         <React.Fragment>
                             <div className="border-b border-[#FD9E07]">
                                 <Select
                                     name="technology"
                                     isSearchable={false}
                                     placeholder="Choose a Technology"
-                                    options={TECHNOLOGY_OPT}
+                                    options={isHireMobileAppDev ? TECHNOLOGY_MOBILE_OPT : TECHNOLOGY_OPT}
                                     isMulti
                                     value={tech}
                                     styles={{
