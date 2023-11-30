@@ -124,6 +124,7 @@ function chooseTech(router) {
     }
     return "";
 }
+
 export default function ContactForm() {
     const router = useRouter();
     const [tech, setTech] = useState([]);
@@ -132,7 +133,7 @@ export default function ContactForm() {
     const isHireReactjsDev = router.pathname.includes("hire-reactjs-developers");
     const isHireMobileAppDev = router.pathname.includes("hire-mobileapp-developers");
 
-    console.log(chooseTech(router))
+    // console.log(chooseTech(router))
 
     const formik = useFormik({
         initialValues: {
@@ -146,6 +147,7 @@ export default function ContactForm() {
             message: "",
             pricingModel: "Hourly",
             company: "",
+            requirement: ""
         },
         validationSchema: Yup.object({
             name: Yup.string().required("Name is Required"),
@@ -155,7 +157,7 @@ export default function ContactForm() {
             phone: Yup.string()
                 .matches(/^\+?[0-9][0-9]{7,14}$/, "Enter a valid Phone Number")
                 .required("Phone Number is Required"),
-            company: Yup.string().required().min(3, "Enter message atlest 3 character long"),
+            // company: Yup.string().required().min(3, "Enter message atlest 3 character long"),
             technology: Yup.string().required("Technology is Required"),
         }),
         onSubmit: async (values) => {
@@ -315,19 +317,16 @@ export default function ContactForm() {
                             {formik.errors.phone}
                         </span>
                     )}
-                    <CustomInput
-                        placeholder="Company Name"
-                        imgSrc="/assets/building.svg"
-                        id="company"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.company}
-                    />
-                    {(formik.touched.company && formik.errors.company) && (
-                        <span className="ml-1 text-xs tracking-wide text-red-500 font-redHat">
-                            {formik.errors.company}
-                        </span>
-                    )}
+                    <div className="flex items-center border-b border-[#FD9E07] mx-2 md:mx-0 py-2 my-2">
+                        <textarea
+                            id="requirement"
+                            placeholder="Your Requirements"
+                            className="w-full px-2 py-1 mr-3 leading-tight text-gray-700 bg-transparent appearance-none focus:outline-none"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.requirement}
+                        ></textarea>
+                    </div>
                     <button
                         type="button"
                         disabled={formik.isSubmitting}
@@ -358,6 +357,20 @@ export default function ContactForm() {
 }
 
 
+// <CustomInput
+// placeholder="Company Name"
+// imgSrc="/assets/building.svg"
+// id="company"
+// type=""
+// onChange={formik.handleChange}
+// onBlur={formik.handleBlur}
+// value={formik.values.company}
+// />
+// {(formik.touched.company && formik.errors.company) && (
+// <span className="ml-1 text-xs tracking-wide text-red-500 font-redHat">
+//     {formik.errors.company}
+// </span>
+// )}
 
 // <div className="hidden md:absolute md:top-[-20px] md:right-[-35px] md:rotate-45 md:w-[70px] md:h-[70px] md:bg-[#FD9E07] md:rounded-full md:flex md:items-center md:justify-center">
 // <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FD9E07] opacity-75"></span>
