@@ -157,7 +157,7 @@ export default function ContactForm() {
             phone: Yup.string()
                 .matches(/^\+?[0-9][0-9]{7,14}$/, "Enter a valid Phone Number")
                 .required("Phone Number is Required"),
-            // company: Yup.string().required().min(3, "Enter message atlest 3 character long"),
+            company: Yup.string().required().min(3, "Enter message atlest 3 character long"),
             technology: Yup.string().required("Technology is Required"),
         }),
         onSubmit: async (values) => {
@@ -327,6 +327,20 @@ export default function ContactForm() {
                             value={formik.values.requirement}
                         ></textarea>
                     </div>
+                    <CustomInput
+                        placeholder="Company Name"
+                        imgSrc="/assets/building.svg"
+                        id="company"
+                        type=""
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.company}
+                    />
+                    {(formik.touched.company && formik.errors.company) && (
+                        <span className="ml-1 text-xs tracking-wide text-red-500 font-redHat">
+                            {formik.errors.company}
+                        </span>
+                    )}
                     <button
                         type="button"
                         disabled={formik.isSubmitting}
